@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none !important;
+  transition: 0.2s all !important;
+}
+
+section {
+  opacity: 0;
+}
+
+.button-raise:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 7px #4e5f6333 !important;
+}
+
+.crm-image {
+  filter: grayscale(100%);
+}
+.crm-image:hover {
+  filter: grayscale(0%);
+}
+
+.card-tariff {
+  min-width: 275px;
+  max-width: 275px;
+}
+
+.card-tariff:hover {
+  box-shadow: 0px 15px 20px #39bef661;
+  transform: translateY(-3px);
+}
+
+.anim-appear {
+  -webkit-animation: anim-appear 0.7s;
+  animation: anim-appear 0.7s;
+}
+
+.container {
+  animation-fill-mode: both !important;
+}
+
+@keyframes anim-appear {
+  0% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.sticky-navbar {
+  border-bottom: 2px solid #39bdf633;
+}
