@@ -21,7 +21,7 @@ C::navbar();
       </div>
       <div class="order-1 md:order-none flex justify-center md:w-1/2">
         <div class="block">
-          <img src="./src/assets/Sale.png" alt="Экономия до 90%. Цены от 50р в месяц!" />
+          <img src="./src/assets/pictures/Sale.png" alt="Экономия до 90%. Цены от 50р в месяц!" />
         </div>
       </div>
     </div>
@@ -54,16 +54,18 @@ C::navbar();
       C::card("SSD HOSTING 2GB", "Для небольших сайтов", 50, "70", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке", "Автоустановка CMS"], "Тестовый период 15 дней", true);
       C::card("SSD HOSTING 6GB", "Для сайтов побольше", 78, "20", ["6GB на SSD", "6GB для бэкапов", "9% нагрузки", "SSL - сертификат", "Премиум CMS плагины"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 12GB", "Сайты со средней нагрузкой", 122, "56", ["12GB на SSD", "12GB для бэкапов", "18% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 7 дней", true);
-      C::card("SSD HOSTING 12GB", "Сайты с высокой нагрузкой", 200, "45", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 5 дней", false);
+      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 200, "45", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 5 дней", false);
       ?>
-      <div class="w-10 lg:hidden">  </div>
+      <div class="w-10 lg:hidden"></div>
     </div>
   </div>
 </section>
 
 <section class="mb-3 md:mb-10">
   <div class="container mx-auto px-3 md:px-0">
-    <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">Основа всех тарифов</h1>
+    <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
+      Основа всех тарифов
+    </h1>
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
         <?
@@ -81,27 +83,49 @@ C::navbar();
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var i = 1;
-    var elements = document.querySelectorAll('section');
+<section class="mb-3 md:mb-10">
+  <div class="container mx-auto px-3 md:px-0">
+    <div class="flex flex-col md:flex-row">
+      <div class="md:w-1/2">
+        <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
+          Этап 1
+        </h1>
+        <p class="text-text-lighten font-normal font-base text-lg mt-4">
+          Работа хостинга постоянно отлаживается и улучшается, в связи с чем в
+          данный момент проходит первый этап работы. Во время первого этапа
+          будет продано 480гб хранилища Все это время цены на тарифы будут
+          снижены.
+        </p>
+        <button class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
+          <a href="#tarrifs">Принять участие</a>
+        </button>
+      </div>
 
-    elements.forEach(element => {
-      element.style.opacity = '0';
-    })
-    elements.forEach(element => {
-      setTimeout(() => {
-        element.style.opacity = '100';
-        element.classList.add('anim-appear');
-      }, 300 * i);
-      i++;
-    });
-    setTimeout(() => {
-      elements.forEach(element => {
-        element.classList.remove('anim-appear');
-        console.log('done');
+      <div class="relative flex justify-center md:w-1/2 mt-4 md:mt-0" style="height: 300px">
+        <div class="absolute">
+          <img src="./src/assets/pictures/Progress.png" alt="Этап 1 - 480гб" />
+        </div>
+        <div class="flex flex-col absolute w-full px-0 md:px-10 mt-4 md:mt-0">
+          <div class="flex justify-between items-baseline">
+            <h1 class="text-3xl lg:text-5xl text-text font-bold leading-none">
+              Уже продано
+            </h1>
+            <div class="flex justify-end items-baseline">
+              <h2 class="font-medium text-text text-xl leading-none mr-2">480GB</h1>
+            </div>
+          </div>
+          <div>
+            <div class="bg-white w-full h-16 rounded flex justify-between items-center mt-2">
+              <div class="bg-primary h-12 rounded flex justify-end items-center" style="width:35%">
+                <h2 class="font-bold text-white text-2xl leading-none mr-2">35%</h1>
+              </div>
+              <h2 class="font-bold text-primary text-2xl leading-none mr-2">100%</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      });
-    }, 2500);
-  });
-</script>
+<? C::footer(); ?>
