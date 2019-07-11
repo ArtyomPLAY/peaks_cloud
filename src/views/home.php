@@ -2,6 +2,7 @@
 C::navbar();
 ?>
 
+
 <section class="mt-3 md:mt-10 mb-3 md:mb-10">
   <div class="container mx-auto px-3 md:px-0 anim-appear">
     <div class="flex flex-col md:flex-row">
@@ -16,7 +17,7 @@ C::navbar();
           вместе с нами, не теряя при этом функции и качество премиум хостинга.
         </p>
         <button class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
-          <a href="#tarrifs">Выбрать план</a>
+          <a onclick="scrollToTariffs()">Выбрать план</a>
         </button>
       </div>
       <div class="order-1 md:order-none flex justify-center md:w-1/2">
@@ -47,11 +48,23 @@ C::navbar();
   </div>
 </section>
 
-<section class="md:mb-10" id="tarrifs">
+<section class="md:mb-10" id="tariffs">
   <div class="container mx-auto md:px-0">
-    <div class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
-      <?
-      C::card("SSD HOSTING 2GB", "Для небольших сайтов", 50, "70", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке", "Автоустановка CMS"], "Тестовый период 15 дней", true);
+    <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
+      <div class="relative flex" style="min-width: 295px">
+        <div class="absolute" >
+          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 50, "70", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке", "Автоустановка CMS"], "Тестовый период 15 дней", true); ?>
+        </div>
+        
+        <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center bg-primary shadow-xl w-16 h-16 absolute rounded-full self-center button-swype-anim" style="right: -10px">
+          <svg width="12" height="20" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.600098 1.4L2.0001 0L8.0001 6L2.0001 12L0.600098 10.6L5.2001 6L0.600098 1.4Z" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+      
+
+      <? 
       C::card("SSD HOSTING 6GB", "Для сайтов побольше", 78, "20", ["6GB на SSD", "6GB для бэкапов", "9% нагрузки", "SSL - сертификат", "Премиум CMS плагины"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 12GB", "Сайты со средней нагрузкой", 122, "56", ["12GB на SSD", "12GB для бэкапов", "18% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 7 дней", true);
       C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 200, "45", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 5 дней", false);
@@ -97,7 +110,7 @@ C::navbar();
           снижены.
         </p>
         <button class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
-          <a href="#tarrifs">Принять участие</a>
+          <a onclick="scrollToTariffs()">Принять участие</a>
         </button>
       </div>
 
@@ -111,15 +124,15 @@ C::navbar();
               Уже продано
             </h1>
             <div class="flex justify-end items-baseline">
-              <h2 class="font-medium text-text text-xl leading-none mr-2">480GB</h1>
+              <h2 class="font-medium text-text-lighten text-xl leading-none mr-2">480GB</h1>
             </div>
           </div>
           <div>
-            <div class="bg-white w-full h-16 rounded flex justify-between items-center mt-2">
+            <div class="bg-white w-full h-16 rounded flex justify-between items-center mt-2 px-2" style="box-shadow: 0 20px 25px -5px #ffffff80, 0 10px 10px -5px #ffffff0a;">
               <div class="bg-primary h-12 rounded flex justify-end items-center" style="width:35%">
-                <h2 class="font-bold text-white text-2xl leading-none mr-2">35%</h1>
+                <h2 class="font-medium text-white text-2xl leading-none mr-2">35%</h1>
               </div>
-              <h2 class="font-bold text-primary text-2xl leading-none mr-2">100%</h2>
+              <h2 class="font-medium text-primary text-2xl leading-none">100%</h2>
             </div>
           </div>
         </div>
