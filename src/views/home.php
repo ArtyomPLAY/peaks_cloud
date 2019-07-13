@@ -53,7 +53,7 @@ C::navbar();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute" >
-          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 50, "70", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке", "Автоустановка CMS"], "Тестовый период 15 дней", true); ?>
+          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 56, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке", "Автоустановка CMS"], "Тестовый период 15 дней", true); ?>
         </div>
         
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center bg-primary shadow-xl w-16 h-16 absolute rounded-full self-center button-swype-anim" style="right: -10px">
@@ -65,9 +65,9 @@ C::navbar();
       
 
       <? 
-      C::card("SSD HOSTING 6GB", "Для сайтов побольше", 78, "20", ["6GB на SSD", "6GB для бэкапов", "9% нагрузки", "SSL - сертификат", "Премиум CMS плагины"], "Тестовый период 12 дней", true);
-      C::card("SSD HOSTING 12GB", "Сайты со средней нагрузкой", 122, "56", ["12GB на SSD", "12GB для бэкапов", "18% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 7 дней", true);
-      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 200, "45", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 5 дней", false);
+      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 116, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат", "Премиум CMS плагины"], "Тестовый период 12 дней", true);
+      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 216, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 7 дней", true);
+      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 300, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита", "Премиум CMS плагины"], "Тестовый период 5 дней", false);
       ?>
       <div class="w-10 lg:hidden"></div>
     </div>
@@ -106,7 +106,7 @@ C::navbar();
         <p class="text-text-lighten font-normal font-base text-lg mt-4">
           Работа хостинга постоянно отлаживается и улучшается, в связи с чем в
           данный момент проходит первый этап работы. Во время первого этапа
-          будет продано 480гб хранилища Все это время цены на тарифы будут
+          будет продано 480гб хранилища. Все это время цены на тарифы будут
           снижены.
         </p>
         <button class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
