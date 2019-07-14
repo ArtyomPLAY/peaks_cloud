@@ -7,38 +7,46 @@ class C
     <div class="container mx-auto">
       <nav class="flex items-center justify-between text-text flex-wrap py-2 px-3 md:py-4 md:px-0">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <span class="font-semibold text-2xl text-text tracking-tight hover:text-primary cursor-pointer">PeaksCloud</span>
+          <span class="font-medium text-2xl text-text tracking-tight hover:text-primary cursor-pointer">PeaksCloud</span>
         </div>
         <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-2 text-text" onclick="toggleMenu()">
-            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <button class="flex focus:outline-none items-center px-3 py-2 text-text" onclick="toggleMenu()">
+
+            <svg id="open-burger" class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
+
+            <svg id="close-burger" class="fill-current h-4 w-4" style="display: none" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2L48 48M48 2L2 48" stroke="#2C3A3E" stroke-width="5" />
+            </svg>
+
+
           </button>
         </div>
-        <div id="menu" class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-end menu-anim">
-          <div class="text-xl h-full">
-            <a class="block mt-3 ml-3  lg:inline-block lg:mt-0 lg:ml-0 text-primary hover:text-primary-500 mr-4 cursor-pointer">
+        <div id="menu" class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-end menu-anim" style="transition: 0.3s all">
+          <div class="text-xl h-full ml-3">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-primary hover:text-primary-500 mr-4 cursor-pointer">
               Главная
             </a>
-            <a class="block mt-3 ml-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
               Домен
             </a>
-            <a class="block mt-3 ml-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
               Хостинг
             </a>
-            <a class="block mt-3 ml-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
               VPS/VDS
             </a>
-            <a class="block mt-3 ml-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
               Облако
             </a>
-            <a class="block mt-3 ml-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
+            <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
               Сотрудничество
             </a>
           </div>
         </div>
+
       </nav>
     </div>
   </section>
@@ -46,7 +54,7 @@ class C
 
 public static function card($title, $desc, $rubles, $cents, array $pluses, $test_period, $margin)
 { ?>
-  <div class="text-text card-tariff flex flex-col p-3 border-2 border-primary rounded-lg <? echo $margin ? " mr-5" : "" ?>" style="height: 505px">
+  <div class="text-text card-tariff flex flex-col p-3 border-2 border-primary rounded-lg <? echo $margin ? " mr-5" : "" ?>" style="height: 470px">
     <h2 class="font-bold text-primary text-2xl text-center tracking-wider mb-3">
       <? echo $title ?>
     </h2>

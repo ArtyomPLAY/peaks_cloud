@@ -7799,14 +7799,14 @@ section {
 }
 
 .sticky-navbar {
-  border-bottom: 2px solid #39bdf633;
+  border-bottom: 2px solid #39bdf652;
 }
 
 .button-swype-anim {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  -webkit-animation: button-swype-anim 1s infinite;
-          animation: button-swype-anim 1s infinite;
+  -webkit-animation: button-swype-anim 2s infinite ease;
+          animation: button-swype-anim 2s infinite ease;
 }
 
 @-webkit-keyframes button-swype-anim {
@@ -7815,7 +7815,7 @@ section {
   }
 
   50% {
-    transform: translateX(10px);
+    transform: translateX(200px);
   }
 
   100% {
@@ -7829,7 +7829,7 @@ section {
   }
 
   50% {
-    transform: translateX(10px);
+    transform: translateX(200px);
   }
 
   100% {
