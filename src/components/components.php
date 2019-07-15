@@ -130,10 +130,75 @@ public static function tariff_main($title, array $pluses, $mark)
 
 public static function footer()
 { ?>
-  <section class="h-40 bg-primary">
-    <div class="container">
+  <section class="bg-text">
+    <div class="container mx-auto pl-3 lg:pl-0">
+      <div class="flex flex-col lg:flex-row justify-between text-white pt-6 lg:pb-3">
+        <div class="flex items-center mb-3 md:mb-0">
+          <a class="font-medium text-2xl text-white-halfopacity tracking-tight hover:text-primary cursor-pointer leading-none">PeaksCloud</a>
+        </div>
 
+        <div class="text-white text-lg lg:flex lg:items-center mb-3 lg:mb-0">
+          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+            Главная
+          </a>
+          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+            Домен
+          </a>
+          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+            Хостинг
+          </a>
+          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+            VPS/VDS
+          </a>
+          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+            Облако
+          </a>
+          <a class="block lg:inline-block cursor-pointer hover:text-primary">
+            Сотрудничество
+          </a>
+        </div>
+        <div class="inline-flex mb-3 lg:mb-0">
+          <a class="mr-3" href="https://vk.com/peakscloud" target="_blank" rel="noopener">
+            <img src="./src/assets/pictures/vk.svg" alt="vk">
+          </a>
+          <a class="mr-3" href="https://vk.com/peakscloud" target="_blank" rel="noopener">
+            <img src="./src/assets/pictures/twitter.svg" alt="twitter">
+          </a>
+          <a href="https://vk.com/peakscloud" target="_blank" rel="noopener">
+            <img src="./src/assets/pictures/facebook.svg" alt="facebook">
+          </a>
+        </div>
+      </div>
+      <div class="block lg:inline-flex mb-3 lg:mb-0">
+        <div class="inline-flex items-center lg:mr-3">
+          <p class="text-white text-base text-lg mr-2 leading-none">Мы принимаем </p>
+          <img class="h-4" src="./src/assets/pictures/yakassa.svg" alt="Яндекс касса">
+        </div>
+        <div class="block text-white-halfopacity">
+          <div class="inline-flex flex-wrap">
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Visa</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Сбербанк</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">MasterCard</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Мир</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Яндекс деньги</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Webmoney</div>
+            <div class="border-white border-2 rounded-sm p-1 mr-2">Qiwi</div>
+            <div class="border-white border-2 rounded-sm p-1">Paypal</div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <p class="text-white-halfopacity">© 2019 peakscloud.ru - хостинг, развитием которого управляют его пользователи</p>
+      </div>
     </div>
   </section>
+<? }
+public static function scrollBackBtn()
+{ ?>
+  <div style="display: none; right: 20px; bottom: 20px;" id="scroll-top-btn" onclick="scrollToTop()" class="fixed anim-appear flex z-20 justify-center items-center w-16 h-16 bg-primary rounded-full shadow-xl cursor-pointer hover:shadow-2xl">
+    <svg width="18" height="11" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0L0 6L1.4 7.4L6 2.8L10.6 7.4L12 6L6 0Z" fill="#ffffff" />
+    </svg>
+  </div>
 <? }
 } ?>

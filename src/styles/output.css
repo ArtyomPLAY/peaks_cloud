@@ -1033,6 +1033,10 @@ video {
   background-color: #4E5F63;
 }
 
+.bg-white-halfopacity {
+  background-color: #FFFFFF9C;
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -1421,6 +1425,10 @@ video {
   background-color: #4E5F63;
 }
 
+.hover\:bg-white-halfopacity:hover {
+  background-color: #FFFFFF9C;
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -1807,6 +1815,10 @@ video {
 
 .focus\:bg-text-lighten:focus {
   background-color: #4E5F63;
+}
+
+.focus\:bg-white-halfopacity:focus {
+  background-color: #FFFFFF9C;
 }
 
 .bg-bottom {
@@ -2277,6 +2289,10 @@ video {
   border-color: #4E5F63;
 }
 
+.border-white-halfopacity {
+  border-color: #FFFFFF9C;
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -2665,6 +2681,10 @@ video {
   border-color: #4E5F63;
 }
 
+.hover\:border-white-halfopacity:hover {
+  border-color: #FFFFFF9C;
+}
+
 .focus\:border-transparent:focus {
   border-color: transparent;
 }
@@ -3051,6 +3071,10 @@ video {
 
 .focus\:border-text-lighten:focus {
   border-color: #4E5F63;
+}
+
+.focus\:border-white-halfopacity:focus {
+  border-color: #FFFFFF9C;
 }
 
 .rounded-none {
@@ -6458,6 +6482,10 @@ video {
   color: #4E5F63;
 }
 
+.text-white-halfopacity {
+  color: #FFFFFF9C;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -6846,6 +6874,10 @@ video {
   color: #4E5F63;
 }
 
+.hover\:text-white-halfopacity:hover {
+  color: #FFFFFF9C;
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -7232,6 +7264,10 @@ video {
 
 .focus\:text-text-lighten:focus {
   color: #4E5F63;
+}
+
+.focus\:text-white-halfopacity:focus {
+  color: #FFFFFF9C;
 }
 
 .text-xs {
@@ -8332,6 +8368,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .sm\:bg-white-halfopacity {
+    background-color: #FFFFFF9C;
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -8720,6 +8760,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .sm\:hover\:bg-white-halfopacity:hover {
+    background-color: #FFFFFF9C;
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -9106,6 +9150,10 @@ section {
 
   .sm\:focus\:bg-text-lighten:focus {
     background-color: #4E5F63;
+  }
+
+  .sm\:focus\:bg-white-halfopacity:focus {
+    background-color: #FFFFFF9C;
   }
 
   .sm\:bg-bottom {
@@ -9576,6 +9624,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .sm\:border-white-halfopacity {
+    border-color: #FFFFFF9C;
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -9964,6 +10016,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .sm\:hover\:border-white-halfopacity:hover {
+    border-color: #FFFFFF9C;
+  }
+
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -10350,6 +10406,10 @@ section {
 
   .sm\:focus\:border-text-lighten:focus {
     border-color: #4E5F63;
+  }
+
+  .sm\:focus\:border-white-halfopacity:focus {
+    border-color: #FFFFFF9C;
   }
 
   .sm\:rounded-none {
@@ -13757,6 +13817,10 @@ section {
     color: #4E5F63;
   }
 
+  .sm\:text-white-halfopacity {
+    color: #FFFFFF9C;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -14145,6 +14209,10 @@ section {
     color: #4E5F63;
   }
 
+  .sm\:hover\:text-white-halfopacity:hover {
+    color: #FFFFFF9C;
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -14531,6 +14599,10 @@ section {
 
   .sm\:focus\:text-text-lighten:focus {
     color: #4E5F63;
+  }
+
+  .sm\:focus\:text-white-halfopacity:focus {
+    color: #FFFFFF9C;
   }
 
   .sm\:text-xs {
@@ -15394,6 +15466,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .md\:bg-white-halfopacity {
+    background-color: #FFFFFF9C;
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -15782,6 +15858,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .md\:hover\:bg-white-halfopacity:hover {
+    background-color: #FFFFFF9C;
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -16168,6 +16248,10 @@ section {
 
   .md\:focus\:bg-text-lighten:focus {
     background-color: #4E5F63;
+  }
+
+  .md\:focus\:bg-white-halfopacity:focus {
+    background-color: #FFFFFF9C;
   }
 
   .md\:bg-bottom {
@@ -16638,6 +16722,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .md\:border-white-halfopacity {
+    border-color: #FFFFFF9C;
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -17026,6 +17114,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .md\:hover\:border-white-halfopacity:hover {
+    border-color: #FFFFFF9C;
+  }
+
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -17412,6 +17504,10 @@ section {
 
   .md\:focus\:border-text-lighten:focus {
     border-color: #4E5F63;
+  }
+
+  .md\:focus\:border-white-halfopacity:focus {
+    border-color: #FFFFFF9C;
   }
 
   .md\:rounded-none {
@@ -20819,6 +20915,10 @@ section {
     color: #4E5F63;
   }
 
+  .md\:text-white-halfopacity {
+    color: #FFFFFF9C;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -21207,6 +21307,10 @@ section {
     color: #4E5F63;
   }
 
+  .md\:hover\:text-white-halfopacity:hover {
+    color: #FFFFFF9C;
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -21593,6 +21697,10 @@ section {
 
   .md\:focus\:text-text-lighten:focus {
     color: #4E5F63;
+  }
+
+  .md\:focus\:text-white-halfopacity:focus {
+    color: #FFFFFF9C;
   }
 
   .md\:text-xs {
@@ -22456,6 +22564,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .lg\:bg-white-halfopacity {
+    background-color: #FFFFFF9C;
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -22844,6 +22956,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .lg\:hover\:bg-white-halfopacity:hover {
+    background-color: #FFFFFF9C;
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -23230,6 +23346,10 @@ section {
 
   .lg\:focus\:bg-text-lighten:focus {
     background-color: #4E5F63;
+  }
+
+  .lg\:focus\:bg-white-halfopacity:focus {
+    background-color: #FFFFFF9C;
   }
 
   .lg\:bg-bottom {
@@ -23700,6 +23820,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .lg\:border-white-halfopacity {
+    border-color: #FFFFFF9C;
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -24088,6 +24212,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .lg\:hover\:border-white-halfopacity:hover {
+    border-color: #FFFFFF9C;
+  }
+
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -24474,6 +24602,10 @@ section {
 
   .lg\:focus\:border-text-lighten:focus {
     border-color: #4E5F63;
+  }
+
+  .lg\:focus\:border-white-halfopacity:focus {
+    border-color: #FFFFFF9C;
   }
 
   .lg\:rounded-none {
@@ -27881,6 +28013,10 @@ section {
     color: #4E5F63;
   }
 
+  .lg\:text-white-halfopacity {
+    color: #FFFFFF9C;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -28269,6 +28405,10 @@ section {
     color: #4E5F63;
   }
 
+  .lg\:hover\:text-white-halfopacity:hover {
+    color: #FFFFFF9C;
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -28655,6 +28795,10 @@ section {
 
   .lg\:focus\:text-text-lighten:focus {
     color: #4E5F63;
+  }
+
+  .lg\:focus\:text-white-halfopacity:focus {
+    color: #FFFFFF9C;
   }
 
   .lg\:text-xs {
@@ -29518,6 +29662,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .xl\:bg-white-halfopacity {
+    background-color: #FFFFFF9C;
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -29906,6 +30054,10 @@ section {
     background-color: #4E5F63;
   }
 
+  .xl\:hover\:bg-white-halfopacity:hover {
+    background-color: #FFFFFF9C;
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -30292,6 +30444,10 @@ section {
 
   .xl\:focus\:bg-text-lighten:focus {
     background-color: #4E5F63;
+  }
+
+  .xl\:focus\:bg-white-halfopacity:focus {
+    background-color: #FFFFFF9C;
   }
 
   .xl\:bg-bottom {
@@ -30762,6 +30918,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .xl\:border-white-halfopacity {
+    border-color: #FFFFFF9C;
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -31150,6 +31310,10 @@ section {
     border-color: #4E5F63;
   }
 
+  .xl\:hover\:border-white-halfopacity:hover {
+    border-color: #FFFFFF9C;
+  }
+
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -31536,6 +31700,10 @@ section {
 
   .xl\:focus\:border-text-lighten:focus {
     border-color: #4E5F63;
+  }
+
+  .xl\:focus\:border-white-halfopacity:focus {
+    border-color: #FFFFFF9C;
   }
 
   .xl\:rounded-none {
@@ -34943,6 +35111,10 @@ section {
     color: #4E5F63;
   }
 
+  .xl\:text-white-halfopacity {
+    color: #FFFFFF9C;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -35331,6 +35503,10 @@ section {
     color: #4E5F63;
   }
 
+  .xl\:hover\:text-white-halfopacity:hover {
+    color: #FFFFFF9C;
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -35717,6 +35893,10 @@ section {
 
   .xl\:focus\:text-text-lighten:focus {
     color: #4E5F63;
+  }
+
+  .xl\:focus\:text-white-halfopacity:focus {
+    color: #FFFFFF9C;
   }
 
   .xl\:text-xs {

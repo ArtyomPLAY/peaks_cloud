@@ -1,5 +1,6 @@
 <? include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
 C::navbar();
+C::scrollBackBtn();
 ?>
 
 <section class="mt-3 md:mt-10 mb-3 md:mb-10">

@@ -12,7 +12,8 @@ module.exports = {
         text: {
           default: '#2C3A3E',
           lighten: '#4E5F63'
-        }
+        },
+        'white-halfopacity': '#FFFFFF9C'
       }
     }
   },
