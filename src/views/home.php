@@ -16,19 +16,13 @@ C::scrollBackBtn();
           сфере для миллионов людей, которые действительно доверяют и экономят
           вместе с нами, не теряя при этом функции и качество премиум хостинга.
         </p>
-        <button
-          onclick="scrollToTariffs()"
-          class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise"
-        >
+        <button onclick="scrollToTariffs()" class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
           <a>Выбрать план</a>
         </button>
       </div>
       <div class="order-1 md:order-none flex justify-center md:w-1/2">
         <div class="block">
-          <img
-            src="./src/assets/pictures/sale.svg"
-            alt="Экономия до 90%. Цены от 50р в месяц!"
-          />
+          <img src="./src/assets/pictures/sale.svg" alt="Экономия до 90%. Цены от 50р в месяц!" />
         </div>
       </div>
     </div>
@@ -39,28 +33,16 @@ C::scrollBackBtn();
   <div class="container mx-auto py-6">
     <div class="flex flex-row justify-around align-middle">
       <div class="flex max-w-full w-12 md:w-20 items-center cursor-pointer">
-        <img
-          src="./src/assets/logos/wp.png"
-          class="crm-image"
-          alt="Wordpress"
-        />
+        <img src="./src/assets/logos/wp.png" class="crm-image" alt="Wordpress" />
       </div>
       <div class="flex max-w-full w-12 md:w-20 items-center cursor-pointer">
-        <img
-          src="./src/assets/logos/joomla.png"
-          class="crm-image"
-          alt="Joomla"
-        />
+        <img src="./src/assets/logos/joomla.png" class="crm-image" alt="Joomla" />
       </div>
       <div class="flex max-w-full w-12 md:w-20 items-center cursor-pointer">
         <img src="./src/assets/logos/dp.png" class="crm-image" alt="Drupal" />
       </div>
       <div class="flex max-w-full w-12 md:w-20 items-center ">
-        <img
-          src="./src/assets/logos/cf.png"
-          class="crm-image cursor-pointer"
-          alt="CloudFlare"
-        />
+        <img src="./src/assets/logos/cf.png" class="crm-image cursor-pointer" alt="CloudFlare" />
       </div>
     </div>
   </div>
@@ -68,30 +50,18 @@ C::scrollBackBtn();
 
 <section class="mb-3 md:mb-10" id="tariffs">
   <div class="container mx-auto md:px-0">
-    <div
-      id="scrollTariffs"
-      class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0"
-    >
+    <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
           <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 56, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
         </div>
 
-        <div
-          id="swypeHint"
-          onclick="removeSwypeHint()"
-          class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim"
-          style="opacity: 0.8"
-        >
-          <img
-            src="./src/assets/pictures/swype.svg"
-            alt="Swipe right"
-            srcset=""
-          />
+        <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
+          <img src="./src/assets/pictures/swype.svg" alt="Swipe right" srcset="" />
         </div>
       </div>
 
-      <? 
+      <?
       C::card("SSD HOSTING 8GB", "Для сайтов побольше", 116, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 216, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
       C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 300, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
@@ -145,19 +115,12 @@ C::scrollBackBtn();
           будет продано 480гб хранилища. Все это время цены на тарифы будут
           снижены.
         </p>
-        <button
-          onclick="scrollToTariffs()"
-          class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise"
-        >
+        <button onclick="scrollToTariffs()" class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
           <a>Принять участие</a>
         </button>
       </div>
 
-      <div
-        class="relative flex justify-center md:w-1/2 mt-4 md:mt-0"
-        style="height: 300px"
-        id="sold-percent"
-      >
+      <div class="relative flex justify-center md:w-1/2 mt-4 md:mt-0" style="height: 300px" id="sold-percent">
         <div class="absolute">
           <img src="./src/assets/pictures/progress.svg" alt="Этап 1 - 480гб" />
         </div>
@@ -167,35 +130,45 @@ C::scrollBackBtn();
               Уже продано
             </h1>
             <div class="flex justify-end items-baseline">
-              <h2
-                class="font-medium text-text-lighten text-xl leading-none mr-2"
-              >
+              <h2 class="font-medium text-text-lighten text-xl leading-none mr-2">
                 480GB
               </h2>
             </div>
           </div>
           <div>
-            <div
-              class="bg-white w-full relative h-16 rounded flex justify-between items-center mt-2 px-2"
-              style="box-shadow: 0 20px 25px -5px #ffffff80, 0 10px 10px -5px #ffffff0a;"
-            >
-              <div
-                class="bg-primary h-12 rounded flex justify-end items-center"
-                id="percent-bar"
-                style="width:0; transition: width 2s !important;"
-              >
+            <div class="bg-white w-full relative h-16 rounded flex justify-between items-center mt-2 px-2" style="box-shadow: 0 20px 25px -5px #ffffff80, 0 10px 10px -5px #ffffff0a;">
+              <div class="bg-primary h-12 rounded flex justify-end items-center" id="percent-bar" style="width:0; transition: width 2s !important;">
                 <h2 class="font-medium text-white text-2xl leading-none mr-2">
                   35%
                 </h2>
               </div>
-              <h2
-                class="font-medium absolute right-0 mr-2 text-primary text-2xl leading-none"
-              >
+              <h2 class="font-medium absolute right-0 mr-2 text-primary text-2xl leading-none">
                 100%
               </h2>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary overflow-hidden h-48 mb-3 md:mb-10">
+  <div class="container mx-auto px-3 md:px-0">
+    <div class="relative">
+      <div class="absolute block left-0 py-4 z-10 h-48">
+        <h1 class="text-3xl md:text-6xl text-white font-bold leading-none mb-4 bg-primary lg:bg-transparent">
+          Партнерская программа
+        </h1>
+        <p 9lass="text-white font-normal font-base text-lg mt-4 bg-text-lighten lg:bg-transparent">
+          Получайте 30% от суммы заказа каждого привлеченного вами клиента.
+        </p>
+        <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
+          <a>Подробнее</a>
+        </button>
+      </div>
+      <div class="relative flex justify-center">
+        <img class="absolute lg:right-0" src="./src/assets/pictures/handshake.svg" alt="handshake" style="max-width: 933px" />
       </div>
     </div>
   </div>
