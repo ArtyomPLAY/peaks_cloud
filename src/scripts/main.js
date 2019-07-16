@@ -71,8 +71,6 @@ function scrollToTariffs() {
 
 // scroll top
 function scrollToTop() {
-  console.log('sss');
-
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

@@ -3,7 +3,7 @@ C::navbar();
 C::scrollBackBtn();
 ?>
 
-<section class="mt-3 md:mt-10 mb-3 md:mb-10">
+<section class="mt-3 md:mt-10 <? echo C::$sections_margin ?>">
   <div class="container mx-auto px-3 md:px-0 anim-appear">
     <div class="flex flex-col md:flex-row">
       <div class="mt-3 md:mt-0 order-2 md:order-none flex-col md:w-1/2">
@@ -29,7 +29,7 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="bg-gray-200 md:mb-10">
+<section class="bg-gray-200 <? echo C::$sections_margin ?>">
   <div class="container mx-auto py-6">
     <div class="flex flex-row justify-around align-middle">
       <div class="flex max-w-full w-12 md:w-20 items-center cursor-pointer">
@@ -48,7 +48,7 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="mb-3 md:mb-10" id="tariffs">
+<section class="<? echo C::$sections_margin ?>" id="tariffs">
   <div class="container mx-auto md:px-0">
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
@@ -79,7 +79,7 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="mb-3 md:mb-10">
+<section class="<? echo C::$sections_margin ?>">
   <div class="container mx-auto px-3 md:px-0">
     <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
       Основа всех тарифов
@@ -87,22 +87,22 @@ C::scrollBackBtn();
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
         <?
-        C::tariff_main("Безлимит", ["Сайты", "Почтовые ящики", "Базы данных", "Домены", "Поддомены", "Трафик"], true);
-        C::tariff_main("Бонусы", ["Бесплатный антивирус", "Бесплатный SSL - сертификат"], true);
-        C::tariff_main("Скорость", ["Скорость накопителей до 1024 мбит/с", "Пропускная способность до 1024 мбит/с"], false);
+        C::tariff_main("Безлимит", ["Сайты", "Почтовые ящики", "Базы данных", "Домены", "Поддомены", "Трафик"], true, true);
+        C::tariff_main("Бонусы", ["Бесплатный антивирус", "Бесплатный SSL - сертификат"], true, true);
+        C::tariff_main("Скорость", ["Скорость накопителей до 1024 мбит/с", "Пропускная способность до 1024 мбит/с"], false, true);
         ?>
       </div>
       <div class="md:w-1/2">
         <?
-        C::tariff_main("Сервис", ["Бесплатный перенос сайта", "Личный помошник на первый месяц", "Отзывчивая поддержка", "Удобная панель управления Plesk", "Ежедневные бэкапы", "Доступ по SSH"], false);
-        C::tariff_main("Разработчикам", ["Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Синхронизация с GitHub"], true);
+        C::tariff_main("Сервис", ["Бесплатный перенос сайта", "Личный помошник на первый месяц", "Отзывчивая поддержка", "Удобная панель управления Plesk", "Ежедневные бэкапы", "Доступ по SSH"], false, true);
+        C::tariff_main("Разработчикам", ["Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Синхронизация с GitHub"], true, false);
         ?>
       </div>
     </div>
   </div>
 </section>
 
-<section class="mb-3 md:mb-10">
+<section class="<? echo C::$sections_margin ?>">
   <div class="container mx-auto px-3 md:px-0">
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
@@ -120,9 +120,9 @@ C::scrollBackBtn();
         </button>
       </div>
 
-      <div class="relative flex justify-center md:w-1/2 mt-4 md:mt-0" style="height: 300px" id="sold-percent">
+      <div class="relative flex justify-center md:w-1/2 mt-4 md:mt-0 h-64" id="sold-percent">
         <div class="absolute">
-          <img src="./src/assets/pictures/progress.svg" alt="Этап 1 - 480гб" />
+          <img class="h-64" src="./src/assets/pictures/progress.svg" alt="Этап 1 - 480гб" />
         </div>
         <div class="flex flex-col absolute w-full px-0 md:px-10 mt-4 md:mt-0">
           <div class="flex justify-between items-baseline">
@@ -153,14 +153,14 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="bg-primary overflow-hidden h-48 mb-3 md:mb-10">
+<section class="bg-primary overflow-hidden h-48 <? echo C::$sections_margin ?>">
   <div class="container mx-auto px-3 md:px-0">
     <div class="relative">
-      <div class="absolute block left-0 py-4 z-10 h-48">
-        <h1 class="text-3xl md:text-6xl text-white font-bold leading-none mb-4 bg-primary lg:bg-transparent">
+      <div class="absolute flex flex-col lg:block justify-between left-0 py-4 z-10 h-48">
+        <h1 class="text-3xl md:text-6xl text-white font-bold leading-none mb-4">
           Партнерская программа
         </h1>
-        <p 9lass="text-white font-normal font-base text-lg mt-4 bg-text-lighten lg:bg-transparent">
+        <p class="text-white font-normal font-base text-lg mt-4">
           Получайте 30% от суммы заказа каждого привлеченного вами клиента.
         </p>
         <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
@@ -169,6 +169,8 @@ C::scrollBackBtn();
       </div>
       <div class="relative flex justify-center">
         <img class="absolute lg:right-0" src="./src/assets/pictures/handshake.svg" alt="handshake" style="max-width: 933px" />
+      </div>
+      <div class="relative h-48 lg:hidden" style="background-color: #0000005c; width: 6000px; left: -500px">
       </div>
     </div>
   </div>

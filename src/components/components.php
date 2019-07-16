@@ -1,6 +1,8 @@
 <?
 class C
 {
+  public static $sections_margin = "mb-5 md:mb-10";
+
   public static function navbar()
   { ?>
   <section id="navbar" class="z-50 bg-white fixed top-0 w-full anim-menu">
@@ -99,10 +101,10 @@ public static function card($title, $desc, $rubles, $cents, array $pluses, $test
   </div>
 <? }
 
-public static function tariff_main($title, array $pluses, $mark)
+public static function tariff_main($title, array $pluses, $mark, $margin)
 {
   ?>
-  <div class="mb-3">
+  <div class="<? echo $margin ? 'mb-3' : '' ?>">
     <h2 class="text-text text-3xl font-medium">
       <? echo $title ?>
     </h2>
@@ -133,12 +135,12 @@ public static function footer()
   <section class="bg-text">
     <div class="container mx-auto pl-3 lg:pl-0">
       <div class="flex flex-col lg:flex-row justify-between text-white pt-6 lg:pb-3">
-        <div class="flex items-center mb-3 md:mb-0">
+        <div class="flex items-center mb-3 lg:mb-0">
           <a class="font-medium text-2xl text-white-halfopacity tracking-tight hover:text-primary cursor-pointer leading-none">PeaksCloud</a>
         </div>
 
         <div class="text-white text-lg lg:flex lg:items-center mb-3 lg:mb-0">
-          <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
+          <a class="block text-primary mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
             Главная
           </a>
           <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
@@ -195,7 +197,7 @@ public static function footer()
 <? }
 public static function scrollBackBtn()
 { ?>
-  <div style="display: none; right: 20px; bottom: 20px;" id="scroll-top-btn" onclick="scrollToTop()" class="fixed anim-appear flex z-20 justify-center items-center w-16 h-16 bg-primary rounded-full shadow-xl cursor-pointer hover:shadow-2xl">
+  <div style="display: none; right: 0; bottom: 100px;" id="scroll-top-btn" onclick="scrollToTop()" class="fixed anim-appear flex z-20 justify-center items-center w-16 h-16 bg-primary rounded-l-full shadow-xl cursor-pointer hover:shadow-2xl">
     <svg width="18" height="11" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0L0 6L1.4 7.4L6 2.8L10.6 7.4L12 6L6 0Z" fill="#ffffff" />
     </svg>
