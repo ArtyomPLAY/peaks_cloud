@@ -130,6 +130,13 @@ public static function tariff_main($title, array $pluses, $mark, $margin)
 <?
 }
 
+public static function payLogo($name, $alt)
+{ ?>
+  <div class="flex justify-center items-center mr-3 mb-3 lg:mb-0" style="max-height: 30px">
+    <img class="block h-4" src="./src/assets/pictures/pay/<? echo $name ?>" alt="<? echo $alt ?>">
+  </div>
+<? }
+
 public static function footer()
 { ?>
   <section class="bg-text">
@@ -173,19 +180,25 @@ public static function footer()
       </div>
       <div class="block lg:inline-flex mb-3 lg:mb-0">
         <div class="inline-flex items-center lg:mr-3">
-          <p class="text-white text-base text-lg mr-2 leading-none">Мы принимаем </p>
-          <img class="h-4" src="./src/assets/pictures/yakassa.svg" alt="Яндекс касса">
+          <p class="text-white-halfopacity text-base text-lg mr-2 leading-none mb-2 lg:mb-0">Мы принимаем </p>
         </div>
-        <div class="block text-white-halfopacity">
+        <div class="flex items-center">
           <div class="inline-flex flex-wrap">
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Visa</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Сбербанк</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">MasterCard</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Мир</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Яндекс деньги</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Webmoney</div>
-            <div class="border-white border-2 rounded-sm p-1 mr-2">Qiwi</div>
-            <div class="border-white border-2 rounded-sm p-1">Paypal</div>
+            <?
+            C::payLogo('visa.svg', 'Visa');
+            C::payLogo('mastercard.svg', 'MasterCard');
+            C::payLogo('maestro.svg', 'MaestroCard');
+            C::payLogo('mir.svg', 'Mir');
+            C::payLogo('Sberbank.svg', 'Sberbank');
+            C::payLogo('tinkoff.png', 'Тинькофф банк');
+            C::payLogo('alfabank.svg', 'Альфа банк');
+            C::payLogo('applepay.svg', 'Apple Pay');
+            C::payLogo('gpay.svg', 'Google Pay');
+            C::payLogo('webmoney.svg', 'WebMoney');
+            C::payLogo('qiwi.svg', 'Qiwi');
+            C::payLogo('yadengi.svg', 'Яндекс.Деньги');
+
+            ?>
           </div>
         </div>
       </div>

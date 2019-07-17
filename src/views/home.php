@@ -1,4 +1,5 @@
-<? include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
+<?
+include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
 C::navbar();
 C::scrollBackBtn();
 ?>
@@ -61,6 +62,9 @@ C::scrollBackBtn();
         </div>
       </div>
 
+
+
+
       <?
       C::card("SSD HOSTING 8GB", "Для сайтов побольше", 116, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 216, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
@@ -73,7 +77,7 @@ C::scrollBackBtn();
         Не устраивают стандартные тарифы?
       </p>
       <span class="text-primary">
-        <a class="hover:underline ml-0 md:ml-1" href=""> Создайте свой!</a>
+        <a class="hover:underline ml-0 md:ml-1" href="">Создайте свой!</a>
       </span>
     </div>
   </div>
@@ -89,7 +93,7 @@ C::scrollBackBtn();
         <?
         C::tariff_main("Безлимит", ["Сайты", "Почтовые ящики", "Базы данных", "Домены", "Поддомены", "Трафик"], true, true);
         C::tariff_main("Бонусы", ["Бесплатный антивирус", "Бесплатный SSL - сертификат"], true, true);
-        C::tariff_main("Скорость", ["Скорость накопителей до 1024 мбит/с", "Пропускная способность до 1024 мбит/с"], false, true);
+        C::tariff_main("Скорость", ["Скорость дисков до 1024 мбит/с", "Скорость каналов до 1024 мбит/с"], false, true);
         ?>
       </div>
       <div class="md:w-1/2">
@@ -129,6 +133,7 @@ C::scrollBackBtn();
             <h1 class="text-3xl lg:text-5xl text-text font-bold leading-none">
               Уже продано
             </h1>
+
             <div class="flex justify-end items-baseline">
               <h2 class="font-medium text-text-lighten text-xl leading-none mr-2">
                 480GB
@@ -153,24 +158,24 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="bg-primary overflow-hidden h-48 <? echo C::$sections_margin ?>">
-  <div class="container mx-auto px-3 md:px-0">
+<section class="bg-primary overflow-hidden <? echo C::$sections_margin ?>">
+  <div class="container mx-auto px-3 lg:px-0">
     <div class="relative">
-      <div class="absolute flex flex-col lg:block justify-between left-0 py-4 z-10 h-48">
+      <div class="absolute lg:right-0 h-full partner-program-img">
+        <img class="h-full" src="./src/assets/pictures/handshake.svg" alt="handshake" style="max-width: 1300px" />
+      </div>
+      <div class="absolute h-full xl:hidden" style="background-color: #0000005c; width: 6000px; left: -500px">
+      </div>
+      <div class="relative flex flex-col lg:block justify-between left-0 py-3 z-10">
         <h1 class="text-3xl md:text-6xl text-white font-bold leading-none mb-4">
           Партнерская программа
         </h1>
-        <p class="text-white font-normal font-base text-lg mt-4">
+        <p class="text-white font-normal font-base text-lg mt-4 mt">
           Получайте 30% от суммы заказа каждого привлеченного вами клиента.
         </p>
         <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
           <a>Подробнее</a>
         </button>
-      </div>
-      <div class="relative flex justify-center">
-        <img class="absolute lg:right-0" src="./src/assets/pictures/handshake.svg" alt="handshake" style="max-width: 933px" />
-      </div>
-      <div class="relative h-48 lg:hidden" style="background-color: #0000005c; width: 6000px; left: -500px">
       </div>
     </div>
   </div>

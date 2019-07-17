@@ -7873,6 +7873,12 @@ section {
   }
 }
 
+@media (max-width: 640px) {
+  .partner-program-img {
+    right: -100%;
+  }
+}
+
 /*############ fonts ###################*/
 
 /* fira-sans-regular - cyrillic_latin */

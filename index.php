@@ -15,7 +15,7 @@
 
 <body class="mt-12 md:mt-32">
 
-  <? include './src/views/home.php' ?>
+  <? include './src/views/home.php'; ?>
 
   <script src="./src/scripts/main.js"></script>
 </body>
