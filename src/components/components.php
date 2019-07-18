@@ -189,7 +189,7 @@ public static function footer()
             C::payLogo('mastercard.svg', 'MasterCard');
             C::payLogo('maestro.svg', 'MaestroCard');
             C::payLogo('mir.svg', 'Mir');
-            C::payLogo('Sberbank.svg', 'Sberbank');
+            C::payLogo('sberbank.svg', 'Sberbank');
             C::payLogo('tinkoff.png', 'Тинькофф банк');
             C::payLogo('alfabank.svg', 'Альфа банк');
             C::payLogo('applepay.svg', 'Apple Pay');
