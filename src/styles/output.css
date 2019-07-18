@@ -7754,8 +7754,15 @@ section {
 }
 
 .card-tariff {
+  height: 470px;
   min-width: 275px;
   max-width: 275px;
+}
+
+.card-review {
+  height: 300px;
+  min-width: 250px;
+  max-width: 250px;
 }
 
 .card-tariff:hover {
@@ -7776,6 +7783,47 @@ section {
 .menu-anim {
   -webkit-animation: anim-menu 0.3s ease;
           animation: anim-menu 0.3s ease;
+}
+
+.scroll-top-off {
+  -webkit-animation: scroll-top-off 0.7s;
+          animation: scroll-top-off 0.7s;
+}
+
+@-webkit-keyframes scroll-top-off {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes scroll-top-off {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
 }
 
 @-webkit-keyframes anim-menu {

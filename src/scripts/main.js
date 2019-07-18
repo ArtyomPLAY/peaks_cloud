@@ -1,15 +1,14 @@
 var navbar = document.getElementById('navbar');
 var sticky = navbar.offsetTop;
 var scrollTariffs = document.getElementById('scrollTariffs');
-var soldPercent = document.getElementById('sold-percent');
 var swypeHint = document.getElementById('swypeHint');
 var scrollTopBtn = document.getElementById('scroll-top-btn');
 var executed = false;
+var scrolling = false;
 
 window.onscroll = function() {
   stickyNavbar();
   toggleScrollTopBtn();
-  animateSoldPercent('35%');
 };
 
 //navbar onscroll
@@ -18,18 +17,6 @@ function stickyNavbar() {
     navbar.classList.add('sticky-navbar');
   } else {
     navbar.classList.remove('sticky-navbar');
-  }
-}
-
-// progress sold animation
-function animateSoldPercent(percent) {
-  if (
-    window.scrollY > soldPercent.offsetTop - window.innerHeight / 2 &&
-    !executed
-  ) {
-    var elem = document.getElementById('percent-bar');
-    elem.style.width = percent;
-    executed = true;
   }
 }
 
@@ -62,16 +49,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 2500);
 });
 
+// scroll to offset
+function scrollToOffset(offset) {
+  window.scrollTo({ top: offset, behavior: 'smooth' });
+}
+
+function scrollToTop() {
+  scrollTopBtn.classList.add('scroll-top-off');
+  scrolling = true;
+  setTimeout(() => {
+    scrollTopBtn.style.display = 'none';
+    scrolling = false;
+  }, 700);
+  scrollToOffset(0);
+}
+
 // scroll to tariff cards
 function scrollToTariffs() {
   var tariffs = document.getElementById('tariffs');
   var offset = tariffs.offsetTop - 100;
-  window.scrollTo({ top: offset, behavior: 'smooth' });
-}
-
-// scroll top
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  scrollToOffset(offset);
 }
 
 // disable swype hint
@@ -105,12 +102,20 @@ function toggleMenu() {
   }
 }
 
+function removeOffer() {
+  var elem = document.getElementById('last-gb-offer');
+  elem.remove();
+}
+
 // scroll top button appear on scroll
 
 function toggleScrollTopBtn() {
-  if (window.pageYOffset >= 500) {
-    scrollTopBtn.style.display = 'flex';
-  } else {
-    scrollTopBtn.style.display = 'none';
+  if (!scrolling) {
+    if (window.pageYOffset >= 500) {
+      scrollTopBtn.classList.remove('scroll-top-off');
+      scrollTopBtn.style.display = 'flex';
+    } else {
+      scrollTopBtn.style.display = 'none';
+    }
   }
 }

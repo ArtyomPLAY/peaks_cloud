@@ -60,13 +60,13 @@ public static function card($title, $desc, $rubles, $cents, array $pluses, $test
     <h2 class="font-bold text-primary text-2xl text-center tracking-wider mb-3">
       <? echo $title ?>
     </h2>
-    <div class="bg-primary text-center py-1 mb-6" style="margin-left: -0.75rem; margin-right: -0.75rem ">
+    <div class="bg-primary text-center py-1 mb-3" style="margin-left: -0.75rem; margin-right: -0.75rem ">
       <h3 class="text-lg text-white">
         <? echo $desc ?>
       </h3>
     </div>
 
-    <div class="flex self-center mb-6">
+    <div class="flex self-center mb-3">
       <p class="text-text text-2xl font-medium leading-none">от</p>
       <h1 class="mx-1 font-medium leading-none -my-2" style="font-size: 90px">
         <? echo $rubles ?>
@@ -77,6 +77,16 @@ public static function card($title, $desc, $rubles, $cents, array $pluses, $test
         </p>
         <p class="leading-none text-xl font-medium  self-end">р/мес</p>
       </div>
+    </div>
+
+    <div class="inline-flex mb-3 justify-between">
+      <div class="bg-primary w-1/3 flex font-medium justify-center" style="margin-left: -0.75rem; ">
+        <h3 class="text-lg text-white">-40%</h3>
+      </div>
+      <div class="flex font-medium justify-center w-2/3">
+        <h3 class="text-lg text-gray-400 line-through">от <? echo (int) ($rubles * 1.67) ?>.68 р/мес</h3>
+      </div>
+
     </div>
 
     <div class="mb-4 h-full ml-2">
@@ -188,7 +198,7 @@ public static function footer()
             C::payLogo('visa.svg', 'Visa');
             C::payLogo('mastercard.svg', 'MasterCard');
             C::payLogo('maestro.svg', 'MaestroCard');
-            C::payLogo('mir.svg', 'Mir');
+            C::payLogo('mir.svg', 'Мир');
             C::payLogo('sberbank.svg', 'Sberbank');
             C::payLogo('tinkoff.png', 'Тинькофф банк');
             C::payLogo('alfabank.svg', 'Альфа банк');
@@ -210,10 +220,26 @@ public static function footer()
 <? }
 public static function scrollBackBtn()
 { ?>
-  <div style="display: none; right: 0; bottom: 100px;" id="scroll-top-btn" onclick="scrollToTop()" class="fixed anim-appear flex z-20 justify-center items-center w-16 h-16 bg-primary rounded-l-full shadow-xl cursor-pointer hover:shadow-2xl">
+  <div style="display: none; right: 0; bottom: 100px;" id="scroll-top-btn" onclick="scrollToTop()" class="fixed anim-appear flex z-50 justify-center items-center w-16 h-16 bg-primary rounded-l-full shadow-xl cursor-pointer hover:shadow-2xl">
     <svg width="18" height="11" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0L0 6L1.4 7.4L6 2.8L10.6 7.4L12 6L6 0Z" fill="#ffffff" />
     </svg>
+  </div>
+<? }
+
+public static function feedback($name, $text, $date, $rate, $margin)
+{ ?>
+  <div class="bg-gray-100 card-review rounded-lg p-4 flex flex-col justify-between <? echo $margin ? 'mr-5' : '' ?>">
+    <div>
+      <h2 class="text-text text-lg font-medium mb-3"><? echo $name ?></h2>
+      <p class="text-text-lighten font-normal text-base">
+        <? echo $text ?>
+      </p>
+    </div>
+    <div class="flex justify-between">
+      <p class="text-text-lighten font-normal text-base"><? echo $date ?></p>
+      <p><? echo $rate ?></p>
+    </div>
   </div>
 <? }
 } ?>

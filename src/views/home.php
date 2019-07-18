@@ -83,6 +83,26 @@ C::scrollBackBtn();
   </div>
 </section>
 
+<? $gb_left = 98; ?>
+<section class="hidden md:block bg-gray-200 fixed bottom-0 w-full z-30 py-4" id="last-gb-offer">
+  <div class="container mx-auto flex flex-row text-text justify-between">
+    <div class="font-bold">
+      <h1 class="text-4xl">Последние <span class="text-primary"><? echo $gb_left ?>ГБ</span> со скидкой 40%</h1>
+      <p class="text-text-lighten font-normal font-base text-lg">
+        Место на накопителях почти закончилось, в честь чего мы устраиваем скидку 40% на все оставшиеся гигабайты!
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <button onclick="scrollToTariffs();removeOffer()" class="bg-primary text-sm text-white py-3 px-12 mb-3 md:w-auto rounded uppercase tracking-widest hover:bg-primary-lighten button-raise">
+        <a>Заказать</a>
+      </button>
+      <p onclick="removeOffer()" class="text-text-lighten cursor-pointer hover:text-text">
+        Нет, спасибо
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="<? echo C::$sections_margin ?>">
   <div class="container mx-auto px-3 md:px-0">
     <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
@@ -99,60 +119,8 @@ C::scrollBackBtn();
       <div class="md:w-1/2">
         <?
         C::tariff_main("Сервис", ["Бесплатный перенос сайта", "Личный помошник на первый месяц", "Отзывчивая поддержка", "Удобная панель управления Plesk", "Ежедневные бэкапы", "Доступ по SSH"], false, true);
-        C::tariff_main("Разработчикам", ["Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Синхронизация с GitHub"], true, false);
+        C::tariff_main("Разработчикам", ["Синхронизация с GitHub",  "Поддержка PHP 5.6.x - 7.1.x", "Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Поддержка FastCGI"], true, false);
         ?>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="<? echo C::$sections_margin ?>">
-  <div class="container mx-auto px-3 md:px-0">
-    <div class="flex flex-col md:flex-row">
-      <div class="md:w-1/2">
-        <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
-          Этап 1
-        </h1>
-        <p class="text-text-lighten font-normal font-base text-lg mt-4">
-          Работа хостинга постоянно отлаживается и улучшается, в связи с чем в
-          данный момент проходит первый этап работы. Во время первого этапа
-          будет продано 480гб хранилища. Все это время цены на тарифы будут
-          снижены.
-        </p>
-        <button onclick="scrollToTariffs()" class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
-          <a>Принять участие</a>
-        </button>
-      </div>
-
-      <div class="relative flex justify-center md:w-1/2 mt-4 md:mt-0 h-64" id="sold-percent">
-        <div class="absolute">
-          <img class="h-64" src="./src/assets/pictures/progress.svg" alt="Этап 1 - 480гб" />
-        </div>
-        <div class="flex flex-col absolute w-full px-0 md:px-10 mt-4 md:mt-0">
-          <div class="flex justify-between items-baseline">
-            <h1 class="text-3xl lg:text-5xl text-text font-bold leading-none">
-              Уже продано
-            </h1>
-
-            <div class="flex justify-end items-baseline">
-              <h2 class="font-medium text-text-lighten text-xl leading-none mr-2">
-                480GB
-              </h2>
-            </div>
-          </div>
-          <div>
-            <div class="bg-white w-full relative h-16 rounded flex justify-between items-center mt-2 px-2" style="box-shadow: 0 20px 25px -5px #ffffff80, 0 10px 10px -5px #ffffff0a;">
-              <div class="bg-primary h-12 rounded flex justify-end items-center" id="percent-bar" style="width:0; transition: width 2s !important;">
-                <h2 class="font-medium text-white text-2xl leading-none mr-2">
-                  35%
-                </h2>
-              </div>
-              <h2 class="font-medium absolute right-0 mr-2 text-primary text-2xl leading-none">
-                100%
-              </h2>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -171,12 +139,32 @@ C::scrollBackBtn();
           Партнерская программа
         </h1>
         <p class="text-white font-normal font-base text-lg mt-4 mt">
-          Получайте 30% от суммы заказа каждого привлеченного вами клиента.
+          Получайте 50% от суммы заказа каждого привлеченного вами клиента.
         </p>
         <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
           <a>Подробнее</a>
         </button>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="<? echo C::$sections_margin ?>" id="tariffs">
+  <div class="container mx-auto">
+    <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-3 px-3 md:px-0">
+      Отзывы
+    </h1>
+    <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 md:px-0 mb-3">
+      <?
+      C::feedback('Иван', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', 'Сегодня', '😊', true);
+      C::feedback('Андрей', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '3 дн. назад', '🙂', true);
+      C::feedback('Александр', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '4 дн. назад', '😊', true);
+      C::feedback('Михаил', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '8 дн. назад', '😊', false)
+      ?>
+      <div class="text-transparent lg:hidden">ol</div>
+    </div>
+    <div class="flex text-center flex-col md:flex-row justify-center">
+      <a class="hover:underline text-primary ml-0 md:ml-1" href="">Оставить отзыв</a>
     </div>
   </div>
 </section>
