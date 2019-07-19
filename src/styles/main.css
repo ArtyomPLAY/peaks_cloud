@@ -14,9 +14,17 @@ section {
   opacity: 0;
 }
 
+.container {
+  animation-fill-mode: both !important;
+}
+
 .button-raise:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 7px #4e5f6333 !important;
+}
+
+.sticky-navbar {
+  border-bottom: 2px solid #39bdf652;
 }
 
 .crm-image {
@@ -32,24 +40,28 @@ section {
   max-width: 275px;
 }
 
-.card-review {
-  height: 300px;
-  min-width: 250px;
-  max-width: 250px;
-}
-
 .card-tariff:hover {
   box-shadow: 0px 15px 20px #39bef661;
   transform: translateY(-3px);
 }
 
+.card-review {
+  height: 320px;
+  min-width: 260px;
+  max-width: 260px;
+}
+
+@media (max-width: 640px) {
+  .partner-program-img {
+    right: -100%;
+  }
+}
+
+/* #### ANIMATIONS #### */
+
 .anim-appear {
   -webkit-animation: anim-appear 0.7s;
   animation: anim-appear 0.7s;
-}
-
-.container {
-  animation-fill-mode: both !important;
 }
 
 .menu-anim {
@@ -107,10 +119,6 @@ section {
   }
 }
 
-.sticky-navbar {
-  border-bottom: 2px solid #39bdf652;
-}
-
 .button-swype-anim {
   animation-iteration-count: infinite;
   animation: button-swype-anim 2s infinite ease;
@@ -130,12 +138,7 @@ section {
   }
 }
 
-@media (max-width: 640px) {
-  .partner-program-img {
-    right: -100%;
-  }
-}
-/*############ fonts ###################*/
+/* #### LOCAL FONTS #### */
 
 /* fira-sans-regular - cyrillic_latin */
 @font-face {

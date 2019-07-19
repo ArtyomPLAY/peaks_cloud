@@ -1,7 +1,18 @@
 <?
 class C
 {
-  public static $sections_margin = "mb-5 md:mb-10";
+  public static function sections_margin()
+  {
+    echo "mb-5 md:mb-10";
+  }
+  public static function sectionHeader($text, $color = 'text-text')
+  {
+    echo '<h1 class="text-4xl md:text-6xl ' . $color . ' font-bold leading-none mb-3">'
+      . $text
+      . '</h1>';
+  }
+
+
 
   public static function navbar()
   { ?>
@@ -115,12 +126,12 @@ public static function tariff_main($title, array $pluses, $mark, $margin)
 {
   ?>
   <div class="<? echo $margin ? 'mb-3' : '' ?>">
-    <h2 class="text-text text-3xl font-medium">
+    <h2 class="text-text text-2xl font-medium">
       <? echo $title ?>
     </h2>
     <div class="flex flex-col ml-1">
       <? for ($i = 0; $i < sizeof($pluses); $i++) { ?>
-        <div class="inline-flex items-center">
+        <div class="inline-flex items-center text-lg text-medium md:text-xl text-text-lighten">
           <? if ($mark) : ?>
             <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.46989 9.29463L17.5301 2.70537C20.2228 0.747079 24 2.67054 24 6V6C24 9.32946 20.2228 11.2529 17.5301 9.29463L8.46989 2.70537C5.77723 0.747079 2 2.67054 2 6V6C2 9.32946 5.77723 11.2529 8.46989 9.29463Z" stroke="#3ABEF7" stroke-width="2.5" />
@@ -130,7 +141,7 @@ public static function tariff_main($title, array $pluses, $mark, $margin)
               <path fill-rule="evenodd" clip-rule="evenodd" d="M6.6 11.6L2.4 7.4L1 8.8L6.6 14.4L18.6 2.4L17.2 1L6.6 11.6Z" fill="#3ABEF7" stroke="#3ABEF7" />
             </svg>
           <? endif; ?>
-          <p class="ml-3 text-lg md:text-xl text-text">
+          <p class="ml-3">
             <? echo $pluses[$i] ?>
           </p>
         </div>

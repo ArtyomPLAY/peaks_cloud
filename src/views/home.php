@@ -4,14 +4,12 @@ C::navbar();
 C::scrollBackBtn();
 ?>
 
-<section class="mt-3 md:mt-10 <? echo C::$sections_margin ?>">
+<section class="mt-3 md:mt-10 <? C::sections_margin() ?>">
   <div class="container mx-auto px-3 md:px-0 anim-appear">
     <div class="flex flex-col md:flex-row">
       <div class="mt-3 md:mt-0 order-2 md:order-none flex-col md:w-1/2">
-        <h1 class="text-5xl md:text-6xl text-text font-bold leading-none">
-          Хостинг нового поколения
-        </h1>
-        <p class="text-text-lighten font-normal font-base text-lg mt-4">
+        <? C::sectionHeader('Хостинг нового поколения'); ?>
+        <p class="text-text-lighten font-normal font-base text-lg">
           PeaksCloud - дешёвый хостинг сайтов, который позволит вам легко
           создать сайт любой тематики. Мы занимаем лидирующие позиции в данной
           сфере для миллионов людей, которые действительно доверяют и экономят
@@ -30,7 +28,7 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="bg-gray-200 <? echo C::$sections_margin ?>">
+<section class="bg-gray-200 <? C::sections_margin() ?>">
   <div class="container mx-auto py-6">
     <div class="flex flex-row justify-around align-middle">
       <div class="flex max-w-full w-12 md:w-20 items-center cursor-pointer">
@@ -49,12 +47,12 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="<? echo C::$sections_margin ?>" id="tariffs">
+<section class="<? C::sections_margin() ?>" id="tariffs">
   <div class="container mx-auto md:px-0">
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
-          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 56, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
+          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -66,9 +64,9 @@ C::scrollBackBtn();
 
 
       <?
-      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 116, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
-      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 216, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
-      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 300, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
+      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
+      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
+      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
       ?>
       <div class="text-transparent lg:hidden">ol</div>
     </div>
@@ -87,7 +85,8 @@ C::scrollBackBtn();
 <section class="hidden md:block bg-gray-200 fixed bottom-0 w-full z-30 py-4" id="last-gb-offer">
   <div class="container mx-auto flex flex-row text-text justify-between">
     <div class="font-bold">
-      <h1 class="text-4xl">Последние <span class="text-primary"><? echo $gb_left ?>ГБ</span> со скидкой 40%</h1>
+      <h1 class="text-4xl">Последние <span class="text-primary">
+          <? echo $gb_left ?>ГБ</span> со скидкой 40%</h1>
       <p class="text-text-lighten font-normal font-base text-lg">
         Место на накопителях почти закончилось, в честь чего мы устраиваем скидку 40% на все оставшиеся гигабайты!
       </p>
@@ -103,11 +102,9 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="<? echo C::$sections_margin ?>">
+<section class="<? C::sections_margin() ?>">
   <div class="container mx-auto px-3 md:px-0">
-    <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-4">
-      Основа всех тарифов
-    </h1>
+    <? C::sectionHeader('Основа всех тарифов'); ?>
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
         <?
@@ -126,7 +123,7 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="bg-primary overflow-hidden <? echo C::$sections_margin ?>">
+<section class="bg-primary overflow-hidden <? C::sections_margin() ?>">
   <div class="container mx-auto px-3 lg:px-0">
     <div class="relative">
       <div class="absolute lg:right-0 h-full partner-program-img">
@@ -135,9 +132,7 @@ C::scrollBackBtn();
       <div class="absolute h-full xl:hidden" style="background-color: #0000005c; width: 6000px; left: -500px">
       </div>
       <div class="relative flex flex-col lg:block justify-between left-0 py-3 z-10">
-        <h1 class="text-3xl md:text-6xl text-white font-bold leading-none mb-4">
-          Партнерская программа
-        </h1>
+        <? C::sectionHeader('Партнерская программа', 'text-white'); ?>
         <p class="text-white font-normal font-base text-lg mt-4 mt">
           Получайте 50% от суммы заказа каждого привлеченного вами клиента.
         </p>
@@ -149,22 +144,23 @@ C::scrollBackBtn();
   </div>
 </section>
 
-<section class="<? echo C::$sections_margin ?>" id="tariffs">
+<section class="<? C::sections_margin() ?>" id="tariffs">
   <div class="container mx-auto">
-    <h1 class="text-5xl md:text-6xl text-text font-bold leading-none mb-3 px-3 md:px-0">
-      Отзывы
-    </h1>
+    <div class="px-3 md:px-0">
+      <? C::sectionHeader('Отзывы') ?>
+    </div>
+
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 md:px-0 mb-3">
       <?
       C::feedback('Иван', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', 'Сегодня', '😊', true);
-      C::feedback('Андрей', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '3 дн. назад', '🙂', true);
-      C::feedback('Александр', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '4 дн. назад', '😊', true);
-      C::feedback('Михаил', 'Отличный хостинг, заказал самый дешевый тариф - все работает на высшем уровне. Помогли настроить WordPress. Все круто, буду продолжать пользоваться вашими услугами, спасибо!', '8 дн. назад', '😊', false)
+      C::feedback('Андрей', 'Использую PeaksCloud более 2-х лет, полностью удовлетворен всеми аспектами услуг (время работы, сеть, качество, стабильность), а также поддержкой клиентов.', '3 дн. назад', '😊', true);
+      C::feedback('John', 'I have been with this hosting for quite long time now and it was just amazing. Do not expect "just a normal service provider", they are the best hosting provider you could ever find, except for DDoS protection, but we can work on that.', '4 дн.назад', '🙂', true);
+      C::feedback('Михаил', 'Быстрый, компетентный и окончательный ответ на все вопросы, которые у меня были. Проблемы были исправлены сразу. Отличная компания! Приятно иметь дело.', '8 дн. назад', '😊', false)
       ?>
       <div class="text-transparent lg:hidden">ol</div>
     </div>
     <div class="flex text-center flex-col md:flex-row justify-center">
-      <a class="hover:underline text-primary ml-0 md:ml-1" href="">Оставить отзыв</a>
+      <a class="hover:underline text-primary ml-0 md:ml-1 cursor-pointer">Оставить отзыв</a>
     </div>
   </div>
 </section>
