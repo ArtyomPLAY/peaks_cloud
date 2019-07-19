@@ -21,7 +21,7 @@ C::scrollBackBtn();
       </div>
       <div class="order-1 md:order-none flex justify-center md:w-1/2">
         <div class="block">
-          <img src="./src/assets/pictures/sale.svg" alt="Экономия до 90%. Цены от 50р в месяц!" />
+          <img src="./src/assets/pictures/sale.svg" alt="Экономия до 90%. Цены от 48р в месяц!" />
         </div>
       </div>
     </div>
@@ -52,7 +52,11 @@ C::scrollBackBtn();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
+<<<<<<< HEAD
           <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
+=======
+          <? C::card("SSD HOSTING 1GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "4% нагрузки", "Помощь в настройке"], "Тестовый период 12 дней", true); ?>
+>>>>>>> d272412ac9bfa627fc621cfed3efe7ee66e34569
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -64,9 +68,15 @@ C::scrollBackBtn();
 
 
       <?
+<<<<<<< HEAD
       C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
       C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
+=======
+      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "16% нагрузки", "Конструктор сайтов"], "Тестовый период 8 дней", true);
+      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "32% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
+      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "50% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
+>>>>>>> d272412ac9bfa627fc621cfed3efe7ee66e34569
       ?>
       <div class="text-transparent lg:hidden">ol</div>
     </div>
@@ -116,7 +126,7 @@ C::scrollBackBtn();
       <div class="md:w-1/2">
         <?
         C::tariff_main("Сервис", ["Бесплатный перенос сайта", "Личный помошник на первый месяц", "Отзывчивая поддержка", "Удобная панель управления Plesk", "Ежедневные бэкапы", "Доступ по SSH"], false, true);
-        C::tariff_main("Разработчикам", ["Синхронизация с GitHub",  "Поддержка PHP 5.6.x - 7.1.x", "Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Поддержка FastCGI"], true, false);
+        C::tariff_main("Разработчикам", ["Синхронизация с GitHub",  "Поддержка PHP 5.2.x - 7.3.x", "Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Поддержка FastCGI"], true, false);
         ?>
       </div>
     </div>
@@ -134,7 +144,7 @@ C::scrollBackBtn();
       <div class="relative flex flex-col lg:block justify-between left-0 py-3 z-10">
         <? C::sectionHeader('Партнерская программа', 'text-white'); ?>
         <p class="text-white font-normal font-base text-lg mt-4 mt">
-          Получайте 50% от суммы заказа каждого привлеченного вами клиента.
+          Получайте до 50% от суммы заказа каждого привлеченного вами клиента.
         </p>
         <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
           <a>Подробнее</a>
