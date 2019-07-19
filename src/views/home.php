@@ -52,11 +52,7 @@ C::scrollBackBtn();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
-<<<<<<< HEAD
           <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
-=======
-          <? C::card("SSD HOSTING 1GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "4% нагрузки", "Помощь в настройке"], "Тестовый период 12 дней", true); ?>
->>>>>>> d272412ac9bfa627fc621cfed3efe7ee66e34569
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -68,15 +64,9 @@ C::scrollBackBtn();
 
 
       <?
-<<<<<<< HEAD
       C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
       C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
       C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
-=======
-      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "16% нагрузки", "Конструктор сайтов"], "Тестовый период 8 дней", true);
-      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "32% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
-      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "50% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
->>>>>>> d272412ac9bfa627fc621cfed3efe7ee66e34569
       ?>
       <div class="text-transparent lg:hidden">ol</div>
     </div>
