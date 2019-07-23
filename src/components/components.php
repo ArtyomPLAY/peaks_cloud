@@ -15,7 +15,21 @@ class C
 
 
   public static function navbar()
-  { ?>
+  {
+    $ru = '<svg class="h-6 mr-2" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M512 200H0V97c0-5 4-9 9-9h494c5 0 9 4 9 9v103z" fill="#f5f5f5" />
+                    <path d="M503 424H9c-5 0-9-4-9-9V312h512v103c0 5-4 9-9 9z" fill="#ff4b55" />
+                    <path fill="#41479b" d="M0 200h512v112H0z" />
+                  </svg>';
+    $en = '<svg class="h-6 mr-2" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M474 88H38c-21 0-38 17-38 39v258c0 22 17 39 38 39h436c21 0 38-17 38-39V127c0-22-17-39-38-39z" fill="#41479b" />
+                <path d="M511 120c-3-18-18-32-37-32h-10L300 195V88h-88v107L48 88H38c-19 0-34 14-37 32l139 92H0v88h140L1 392c3 18 18 32 37 32h10l164-107v107h88V317l164 107h10c19 0 34-14 37-32l-139-92h140v-88H372l139-92z" fill="#f5f5f5" />
+                <g fill="#ff4b55">
+                  <path d="M282 88h-52v142H0v52h230v142h52V282h230v-52H282z" />
+                  <path d="M25 421l186-121h-32L9 410c4 5 10 9 16 11zM346 300h-32l181 117c5-3 9-7 12-13L346 300zM4 109l158 103h32L15 96c-4 3-8 8-11 13zM333 212l170-111c-5-4-10-8-16-10L300 212h33z" />
+                </g>
+              </svg>';
+    ?>
     <section id="navbar" class="z-50 bg-white fixed top-0 w-full anim-menu">
       <div class="container mx-auto">
         <nav class="flex items-center justify-between text-text flex-wrap py-2 px-3 md:py-4 md:px-0">
@@ -33,7 +47,6 @@ class C
               <svg id="close-burger" class="fill-current h-4 w-4" style="display: none" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 2L48 48M48 2L2 48" stroke="#2C3A3E" stroke-width="5" />
               </svg>
-
 
             </button>
           </div>
@@ -57,16 +70,37 @@ class C
               <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
                 Сотрудничество
               </a>
-              <div class="flex items-center mt-3 lg:inline-flex lg:mt-0 lg:ml-0 text-text">
-                <div class="inline-flex items-center">
-                  <svg class="h-6 mr-2" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M512 200H0V97c0-5 4-9 9-9h494c5 0 9 4 9 9v103z" fill="#f5f5f5" />
-                    <path d="M503 424H9c-5 0-9-4-9-9V312h512v103c0 5-4 9-9 9z" fill="#ff4b55" />
-                    <path fill="#41479b" d="M0 200h512v112H0z" />
-                  </svg>
-                  <p class="uppercase leading-none">RU</p>
+              <? if ($_SESSION['lang'] == 'ru') : ?>
+                <div class="dropdown flex items-center mt-3 lg:mt-0 -ml-2 text-text">
+                  <div class="inline-flex ml-2 items-center">
+                    <? echo $ru; ?>
+                    <p class="uppercase">RU</p>
+                  </div>
+                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl">
+                    <a class="block cursor-pointer hover:bg-gray-300 leading-none px-2 py-1" href="./src/scripts/lang.php?lang=en">
+                      <div class="inline-flex items-center">
+                        <? echo $en; ?>
+                        <p class="uppercase leading-none">EN</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              <? elseif ($_SESSION['lang'] == 'en') : ?>
+                <div class="dropdown flex items-center mt-3 lg:mt-0 -ml-2 text-text">
+                  <div class="inline-flex ml-2 items-center">
+                    <? echo $en; ?>
+                    <p class="uppercase">EN</p>
+                  </div>
+                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl">
+                    <a class="block cursor-pointer hover:bg-gray-300 leading-none px-2 py-1" href="./src/scripts/lang.php?lang=ru">
+                      <div class="inline-flex items-center">
+                        <? echo $ru; ?>
+                        <p class="uppercase leading-none">RU</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              <? endif; ?>
             </div>
           </div>
 
@@ -75,7 +109,7 @@ class C
     </section>
   <? }
 
-  public static function card($title, $desc, $rubles, $cents, array $pluses, $test_period, $margin)
+  public static function card($title, $desc, $rubles, $cents, array $pluses, $test_period, $currency, $margin = true)
   { ?>
     <div class="text-text card-tariff flex flex-col p-3 border-2 border-primary rounded-lg <? echo $margin ? " mr-5" : "" ?>" style="height: 470px">
       <h2 class="font-bold text-primary text-2xl text-center tracking-wider mb-3">
@@ -88,7 +122,7 @@ class C
       </div>
 
       <div class="flex self-center mb-3">
-        <p class="text-text text-2xl font-medium leading-none">от</p>
+        <p class="text-text text-2xl font-medium leading-none"><? echo $_SESSION['lang'] == 'ru' ? 'от ' : '' ?></p>
         <h1 class="mx-1 font-medium leading-none -my-2" style="font-size: 90px">
           <? echo $rubles ?>
         </h1>
@@ -96,7 +130,7 @@ class C
           <p class="leading-none text-2xl font-medium  self-start">
             <? echo $cents ?>
           </p>
-          <p class="leading-none text-xl font-medium  self-end">р/мес</p>
+          <p class="leading-none text-xl font-medium  self-end"><? echo $currency ?></p>
         </div>
       </div>
 
@@ -105,14 +139,14 @@ class C
           <h3 class="text-lg text-white">-40%</h3>
         </div>
         <div class="flex font-medium justify-center w-2/3">
-          <h3 class="text-lg text-gray-400 line-through">от <? echo (int) ($rubles * 1.67) ?>.68 р/мес</h3>
+          <h3 class="text-lg text-gray-400 line-through"> <? echo $_SESSION['lang'] == 'ru' ? 'от ' : 'starts at ' . ($rubles * 1.67) . $currency ?></h3>
         </div>
 
       </div>
 
       <div class="mb-4 h-full ml-2">
         <? for ($i = 0; $i < sizeof($pluses); $i++) { ?>
-          <div class="inline-flex items-center <? echo $i != sizeof($pluses) - 1 ? " mb-2" : "" ?>">
+          <div class="inline-flex items-center w-full <? echo $i != sizeof($pluses) - 1 ? " mb-2" : "" ?>">
             <svg widt h="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg ">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M6.6 11.6L2.4 7.4L1 8.8L6.6 14.4L18.6 2.4L17.2 1L6.6 11.6Z" fill="#3ABEF7" stroke="#3ABEF7" />
             </svg>

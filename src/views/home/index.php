@@ -1,8 +1,10 @@
 <?
-include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
-$lang = "ru";
-if ($lang == "ru")
+if ($_SESSION['lang'] == "ru")
   include __DIR__ . '/ru.php';
+elseif ($_SESSION['lang'] == 'en') {
+  include __DIR__ . '/en.php';
+}
+include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
 
 C::navbar();
 C::scrollBackBtn();
@@ -53,7 +55,7 @@ C::scrollBackBtn();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
-          <? C::card($loc['s2']['tarrifs'][0]['t'], $loc['s2']['tarrifs'][0]['desc'], $loc['s2']['tarrifs'][0]['int'], $loc['s2']['tarrifs'][0]['fr'], $loc['s2']['tarrifs'][0]['diff'], $loc['s2']['test'] . ' ' . $loc['s2']['tarrifs'][0]['test'], true); ?>
+          <? C::card($loc['s2']['tarrifs'][0]['t'], $loc['s2']['tarrifs'][0]['desc'], $loc['s2']['tarrifs'][0]['int'], $loc['s2']['tarrifs'][0]['fr'], $loc['s2']['tarrifs'][0]['diff'], $loc['s2']['test'] . ' ' . $loc['s2']['tarrifs'][0]['test'], $loc['s2']['currency']); ?>
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -64,7 +66,7 @@ C::scrollBackBtn();
       <?
       array_shift($loc['s2']['tarrifs']);
       foreach ($loc['s2']['tarrifs'] as $t) {
-        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], true);
+        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], $loc['s2']['currency']);
       }
       ?>
       <div class="text-transparent lg:hidden">ol</div>
