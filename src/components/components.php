@@ -38,7 +38,7 @@ class C
             </button>
           </div>
           <div id="menu" class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-end menu-anim" style="transition: 0.3s all">
-            <div class="text-xl h-full ml-3">
+            <div class="text-xl lg:inline-flex items-center h-full ml-3">
               <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-primary hover:text-primary-500 mr-4 cursor-pointer">
                 Главная
               </a>
@@ -57,6 +57,16 @@ class C
               <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
                 Сотрудничество
               </a>
+              <div class="flex items-center mt-3 lg:inline-flex lg:mt-0 lg:ml-0 text-text">
+                <div class="inline-flex items-center">
+                  <svg class="h-6 mr-2" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M512 200H0V97c0-5 4-9 9-9h494c5 0 9 4 9 9v103z" fill="#f5f5f5" />
+                    <path d="M503 424H9c-5 0-9-4-9-9V312h512v103c0 5-4 9-9 9z" fill="#ff4b55" />
+                    <path fill="#41479b" d="M0 200h512v112H0z" />
+                  </svg>
+                  <p class="uppercase leading-none">RU</p>
+                </div>
+              </div>
             </div>
           </div>
 

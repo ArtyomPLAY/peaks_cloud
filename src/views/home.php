@@ -1,5 +1,9 @@
 <?
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
+$lang = "ru";
+if ($lang == "ru")
+  include __DIR__ . '/ru.php';
+
 C::navbar();
 C::scrollBackBtn();
 ?>
@@ -8,20 +12,17 @@ C::scrollBackBtn();
   <div class="container mx-auto px-3 md:px-0 anim-appear">
     <div class="flex flex-col md:flex-row">
       <div class="mt-3 md:mt-0 order-2 md:order-none flex-col md:w-1/2">
-        <? C::sectionHeader('Хостинг нового поколения'); ?>
+        <? C::sectionHeader($loc['s1']['h']); ?>
         <p class="text-text-lighten font-normal font-base text-lg">
-          PeaksCloud - дешёвый хостинг сайтов, который позволит вам легко
-          создать сайт любой тематики. Мы занимаем лидирующие позиции в данной
-          сфере для миллионов людей, которые действительно доверяют и экономят
-          вместе с нами, не теряя при этом функции и качество премиум хостинга.
+          <? echo $loc['s1']['p'] ?>
         </p>
         <button onclick="scrollToTariffs()" class="bg-primary text-sm text-white py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-4 hover:bg-primary-lighten button-raise">
-          <a>Выбрать план</a>
+          <a><? echo $loc['s1']['btn'] ?></a>
         </button>
       </div>
       <div class="order-1 md:order-none flex justify-center md:w-1/2">
         <div class="block">
-          <img src="./src/assets/pictures/sale.svg" alt="Экономия до 90%. Цены от 48р в месяц!" />
+          <img src="<? echo $loc['s1']['img_loc'] ?>" alt="<? echo $loc['s1']['img_alt'] ?>" />
         </div>
       </div>
     </div>
@@ -52,7 +53,7 @@ C::scrollBackBtn();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
-          <? C::card("SSD HOSTING 2GB", "Для небольших сайтов", 46, "68", ["2GB на SSD", "2GB для бэкапов", "3% нагрузки", "Помощь в настройке"], "Тестовый период 15 дней", true); ?>
+          <? C::card($loc['s2']['tarrifs'][0]['t'], $loc['s2']['tarrifs'][0]['desc'], $loc['s2']['tarrifs'][0]['int'], $loc['s2']['tarrifs'][0]['fr'], $loc['s2']['tarrifs'][0]['diff'], $loc['s2']['test'] . ' ' . $loc['s2']['tarrifs'][0]['test'], true); ?>
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -61,18 +62,19 @@ C::scrollBackBtn();
       </div>
 
       <?
-      C::card("SSD HOSTING 8GB", "Для сайтов побольше", 106, "68", ["8GB на SSD", "8GB для бэкапов", "9% нагрузки", "SSL - сертификат"], "Тестовый период 12 дней", true);
-      C::card("SSD HOSTING 16GB", "Сайты со средней нагрузкой", 206, "68", ["16GB на SSD", "16GB для бэкапов", "18% нагрузки", "CloudFlare защита"], "Тестовый период 7 дней", true);
-      C::card("SSD HOSTING 24GB", "Сайты с высокой нагрузкой", 316, "68", ["24GB на SSD", "24GB для бэкапов", "35% нагрузки", "CloudFlare защита"], "Тестовый период 5 дней", false);
+      array_shift($loc['s2']['tarrifs']);
+      foreach ($loc['s2']['tarrifs'] as $t) {
+        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], true);
+      }
       ?>
       <div class="text-transparent lg:hidden">ol</div>
     </div>
     <div class="flex text-center flex-col md:flex-row justify-center">
       <p class="text-text-lighten">
-        Не устраивают стандартные тарифы?
+        <? echo $loc['s2']['hint'] ?>
       </p>
       <span class="text-primary">
-        <a class="hover:underline ml-0 md:ml-1" href="">Создайте свой!</a>
+        <a class="hover:underline ml-0 md:ml-1" href=""><? echo $loc['s2']['hint_span'] ?></a>
       </span>
     </div>
   </div>
