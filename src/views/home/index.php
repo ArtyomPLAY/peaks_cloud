@@ -6,7 +6,7 @@ elseif ($_SESSION['lang'] == 'en') {
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
 
-C::navbar();
+C::navbar($loc['nav']['titles'], $loc['nav']['links'], 0);
 C::scrollBackBtn();
 ?>
 

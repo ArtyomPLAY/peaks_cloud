@@ -14,7 +14,7 @@ class C
 
 
 
-  public static function navbar()
+  public static function navbar($titles, $links, $current)
   {
     $ru = '<svg class="h-6 mr-2" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M512 200H0V97c0-5 4-9 9-9h494c5 0 9 4 9 9v103z" fill="#f5f5f5" />
@@ -52,25 +52,14 @@ class C
           </div>
           <div id="menu" class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-end menu-anim" style="transition: 0.3s all">
             <div class="text-xl lg:inline-flex items-center h-full ml-3">
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-primary hover:text-primary-500 mr-4 cursor-pointer">
-                Главная
-              </a>
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
-                Домен
-              </a>
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
-                Хостинг
-              </a>
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
-                VPS/VDS
-              </a>
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
-                Облако
-              </a>
-              <a class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 text-text hover:text-primary mr-4 cursor-pointer">
-                Сотрудничество
-              </a>
-              <? if ($_SESSION['lang'] == 'ru') : ?>
+              <?
+              for ($i = 0; $i < sizeof($titles); $i++) { ?>
+                <a href="<? echo $links[$i] ?>" class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 <? echo $i == $current ? 'text-primary' : 'text-text' ?>  hover:text-primary-500 mr-4 cursor-pointer">
+                  <? echo $titles[$i] ?>
+                </a>
+              <? }
+
+              if ($_SESSION['lang'] == 'ru') : ?>
                 <div class="dropdown flex items-center mt-3 lg:mt-0 -ml-2 text-text">
                   <div class="inline-flex ml-2 items-center">
                     <? echo $ru; ?>
@@ -139,19 +128,19 @@ class C
           <h3 class="text-lg text-white">-40%</h3>
         </div>
         <div class="flex font-medium justify-center w-2/3">
-          <h3 class="text-lg text-gray-400 line-through"> <? echo $_SESSION['lang'] == 'ru' ? 'от ' : 'starts at ' . ($rubles * 1.67) . $currency ?></h3>
+          <h3 class="text-lg text-gray-400 line-through"> <? echo ($_SESSION['lang'] == 'ru' ? 'от ' : 'starts at ') . ($rubles * 1.67) . $currency ?></h3>
         </div>
 
       </div>
 
       <div class="mb-4 h-full ml-2">
-        <? for ($i = 0; $i < sizeof($pluses); $i++) { ?>
-          <div class="inline-flex items-center w-full <? echo $i != sizeof($pluses) - 1 ? " mb-2" : "" ?>">
+        <? foreach ($pluses as $key => $plus) { ?>
+          <div class="inline-flex items-center w-full <? echo $key != sizeof($pluses) - 1 ? 'mb-2' : '' ?>">
             <svg widt h="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg ">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M6.6 11.6L2.4 7.4L1 8.8L6.6 14.4L18.6 2.4L17.2 1L6.6 11.6Z" fill="#3ABEF7" stroke="#3ABEF7" />
             </svg>
             <p class="ml-3 font-medium text-lg">
-              <? echo $pluses[$i] ?>
+              <? echo $plus ?>
             </p>
           </div>
         <? } ?>
@@ -166,7 +155,7 @@ class C
     </div>
   <? }
 
-  public static function tariff_main($title, array $pluses, $mark, $margin)
+  public static function tariff_main($title, array $pluses, $mark, $margin = true)
   {
     ?>
     <div class="<? echo $margin ? 'mb-3' : '' ?>">
@@ -174,7 +163,7 @@ class C
         <? echo $title ?>
       </h2>
       <div class="flex flex-col ml-1">
-        <? for ($i = 0; $i < sizeof($pluses); $i++) { ?>
+        <? foreach ($pluses as $plus) { ?>
           <div class="inline-flex items-center text-lg text-medium md:text-xl text-text-lighten">
             <? if ($mark) : ?>
               <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -186,7 +175,7 @@ class C
               </svg>
             <? endif; ?>
             <p class="ml-3">
-              <? echo $pluses[$i] ?>
+              <? echo $plus ?>
             </p>
           </div>
         <? } ?>

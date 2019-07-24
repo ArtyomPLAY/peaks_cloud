@@ -1,6 +1,10 @@
 <?
 
 $loc = array(
+  'nav' => array(
+    'titles' => ['Home', 'Domen', 'Hosting', 'VPS/VDS', 'Cloud', 'Partnership'],
+    'links' => ['/', '', '', '', '', '']
+  ),
   's1' => array(
     'h' => 'Next generation hosting',
     'p' => 'PeaksCloud - cheap website hosting, which will help you easily make website of any category. We lead top positions in this field for millions of people, who trust us and save money with us, without losing functionality and premium quality.',
