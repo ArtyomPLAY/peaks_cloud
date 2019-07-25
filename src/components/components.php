@@ -54,7 +54,7 @@ class C
             <div class="text-xl lg:inline-flex items-center h-full ml-3">
               <?
               for ($i = 0; $i < sizeof($titles); $i++) { ?>
-                <a href="<? echo $links[$i] ?>" class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 <? echo $i == $current ? 'text-primary' : 'text-text' ?>  hover:text-primary-500 mr-4 cursor-pointer">
+                <a href="<? echo $links[$i] ?>" class="block mt-3 lg:inline-block lg:mt-0 lg:ml-0 <? echo $i == $current ? 'text-primary' : 'text-text' ?>  hover:text-primary mr-4 cursor-pointer">
                   <? echo $titles[$i] ?>
                 </a>
               <? }
@@ -65,7 +65,7 @@ class C
                     <? echo $ru; ?>
                     <p class="uppercase">RU</p>
                   </div>
-                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl">
+                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl anim-appear">
                     <a class="block cursor-pointer hover:bg-gray-300 leading-none px-2 py-1" href="./src/scripts/lang.php?lang=en">
                       <div class="inline-flex items-center">
                         <? echo $en; ?>
@@ -80,7 +80,7 @@ class C
                     <? echo $en; ?>
                     <p class="uppercase">EN</p>
                   </div>
-                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl">
+                  <div class="dropdown-lang absolute bg-gray-100 rounded overflow-hidden shadow-xl anim-appear">
                     <a class="block cursor-pointer hover:bg-gray-300 leading-none px-2 py-1" href="./src/scripts/lang.php?lang=ru">
                       <div class="inline-flex items-center">
                         <? echo $ru; ?>

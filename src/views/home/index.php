@@ -65,8 +65,8 @@ C::scrollBackBtn();
 
       <?
       array_shift($loc['s2']['tarrifs']);
-      foreach ($loc['s2']['tarrifs'] as $t) {
-        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], $loc['s2']['currency']);
+      foreach ($loc['s2']['tarrifs'] as $key => $t) {
+        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], $loc['s2']['currency'], $key == sizeof($loc['s2']['tarrifs'])  - 1 ? false : true);
       }
       ?>
       <div class="text-transparent lg:hidden">ol</div>
