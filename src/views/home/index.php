@@ -1,7 +1,9 @@
 <?
-if ($_SESSION['lang'] == "ru")
+if ($_SESSION['lang'] == "ru") {
+  //$data = file_get_contents(__DIR__ . "/ru.json");
+  //$loc = json_decode($data, true);
   include __DIR__ . '/ru.php';
-elseif ($_SESSION['lang'] == 'en') {
+} elseif ($_SESSION['lang'] == 'en') {
   include __DIR__ . '/en.php';
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
@@ -55,7 +57,7 @@ C::scrollBackBtn();
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 py-6 md:px-0">
       <div class="relative flex" style="min-width: 295px">
         <div class="absolute">
-          <? C::card($loc['s2']['tarrifs'][0]['t'], $loc['s2']['tarrifs'][0]['desc'], $loc['s2']['tarrifs'][0]['int'], $loc['s2']['tarrifs'][0]['fr'], $loc['s2']['tarrifs'][0]['diff'], $loc['s2']['test'] . ' ' . $loc['s2']['tarrifs'][0]['test'], $loc['s2']['currency']); ?>
+          <? C::card($loc['s2']['tarrifs'][0]['t'], $loc['s2']['tarrifs'][0]['desc'], $loc['s2']['tarrifs'][0]['int'], $loc['s2']['tarrifs'][0]['fr'], $loc['s2']['tarrifs'][0]['diff'], $loc['s2']['test'] . ' ' . $loc['s2']['tarrifs'][0]['test'], $loc['s2']['currency'], $loc['s2']['btn']); ?>
         </div>
 
         <div id="swypeHint" onclick="removeSwypeHint()" class="flex md:hidden items-center justify-center w-48 h-48 absolute self-center button-swype-anim" style="opacity: 0.8">
@@ -66,7 +68,7 @@ C::scrollBackBtn();
       <?
       array_shift($loc['s2']['tarrifs']);
       foreach ($loc['s2']['tarrifs'] as $key => $t) {
-        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], $loc['s2']['currency'], $key == sizeof($loc['s2']['tarrifs'])  - 1 ? false : true);
+        C::card($t['t'], $t['desc'], $t['int'], $t['fr'], $t['diff'], $loc['s2']['test'] . ' ' . $t['test'], $loc['s2']['currency'], $loc['s2']['btn'], $key == sizeof($loc['s2']['tarrifs'])  - 1 ? false : true);
       }
       ?>
       <div class="text-transparent lg:hidden">ol</div>
@@ -86,18 +88,22 @@ C::scrollBackBtn();
 <section class="hidden md:block bg-gray-200 fixed bottom-0 w-full z-30 py-4" id="last-gb-offer">
   <div class="container mx-auto flex flex-row text-text justify-between">
     <div class="font-bold">
-      <h1 class="text-4xl">Последние <span class="text-primary">
-          <? echo $gb_left ?>ГБ</span> со скидкой 40%</h1>
+      <h1 class="text-4xl"><? echo $loc['ad']['h.1'] ?>
+        <span class="text-primary">
+          <? echo $gb_left . $loc['ad']['unit'] ?>
+        </span>
+        <? echo $loc['ad']['h.2'] ?>
+      </h1>
       <p class="text-text-lighten font-normal font-base text-lg">
-        Место на накопителях почти закончилось, в честь чего мы устраиваем скидку 40% на все оставшиеся гигабайты!
+        <? echo $loc['ad']['p'] ?>
       </p>
     </div>
     <div class="flex flex-col justify-center items-center">
       <button onclick="scrollToTariffs();removeOffer()" class="bg-primary text-sm text-white py-3 px-12 mb-3 md:w-auto rounded uppercase tracking-widest hover:bg-primary-lighten button-raise">
-        <a>Заказать</a>
+        <a><? echo $loc['ad']['btn'] ?></a>
       </button>
       <p onclick="removeOffer()" class="text-text-lighten cursor-pointer hover:text-text">
-        Нет, спасибо
+        <? echo $loc['ad']['no'] ?>
       </p>
     </div>
   </div>
@@ -105,19 +111,20 @@ C::scrollBackBtn();
 
 <section class="<? C::sections_margin() ?>">
   <div class="container mx-auto px-3 md:px-0">
-    <? C::sectionHeader('Основа всех тарифов'); ?>
+    <? C::sectionHeader($loc['s3']['h']); ?>
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
         <?
-        C::tariff_main("Безлимит", ["Сайты", "Почтовые ящики", "Базы данных", "Домены", "Поддомены", "Трафик"], true, true);
-        C::tariff_main("Бонусы", ["Бесплатный антивирус", "Бесплатный SSL - сертификат"], true, true);
-        C::tariff_main("Скорость", ["Скорость дисков до 1024 мбит/с", "Скорость каналов до 1024 мбит/с"], false, true);
+        foreach (array_slice($loc['s3']['data'], 0, 3) as $key => $item) {
+          C::tariff_main($item['title'], $item['data'], $key == 2 ? false : true);
+        }
         ?>
       </div>
       <div class="md:w-1/2">
         <?
-        C::tariff_main("Сервис", ["Бесплатный перенос сайта", "Личный помошник на первый месяц", "Отзывчивая поддержка", "Удобная панель управления Plesk", "Ежедневные бэкапы", "Доступ по SSH"], false, true);
-        C::tariff_main("Разработчикам", ["Синхронизация с GitHub",  "Поддержка PHP 5.2.x - 7.3.x", "Поддержка Perl", "Поддержка Python", "Поддержка Docker", "Поддержка FastCGI"], true, false);
+        foreach (array_slice($loc['s3']['data'], 3, 2) as $key => $item) {
+          C::tariff_main($item['title'], $item['data'], $key == 0 ? false : true);
+        }
         ?>
       </div>
     </div>
@@ -133,12 +140,12 @@ C::scrollBackBtn();
       <div class="absolute h-full xl:hidden" style="background-color: #0000005c; width: 6000px; left: -500px">
       </div>
       <div class="relative flex flex-col lg:block justify-between left-0 py-3 z-10">
-        <? C::sectionHeader('Партнерская программа', 'text-white'); ?>
+        <? C::sectionHeader($loc['s4']['h'], 'text-white'); ?>
         <p class="text-white font-normal font-base text-lg mt-4 mt">
-          Получайте до 50% от суммы заказа каждого привлеченного вами клиента.
+          <? echo $loc['s4']['p'] ?>
         </p>
         <button class="bg-white text-sm text-primary py-3 px-8 w-full md:w-auto rounded uppercase tracking-widest mt-2 button-raise">
-          <a>Подробнее</a>
+          <a><? echo $loc['s4']['btn'] ?></a>
         </button>
       </div>
     </div>
@@ -148,7 +155,7 @@ C::scrollBackBtn();
 <section class="<? C::sections_margin() ?>" id="tariffs">
   <div class="container mx-auto">
     <div class="px-3 md:px-0">
-      <? C::sectionHeader('Отзывы') ?>
+      <? C::sectionHeader($loc['s5']['h']) ?>
     </div>
 
     <div id="scrollTariffs" class="flex flex-row xl:justify-center overflow-x-auto px-3 md:px-0 mb-3">
@@ -161,9 +168,9 @@ C::scrollBackBtn();
       <div class="text-transparent lg:hidden">ol</div>
     </div>
     <div class="flex text-center flex-col md:flex-row justify-center">
-      <a class="hover:underline text-primary ml-0 md:ml-1 cursor-pointer">Оставить отзыв</a>
+      <a class="hover:underline text-primary ml-0 md:ml-1 cursor-pointer"><? echo $loc['s5']['hint'] ?></a>
     </div>
   </div>
 </section>
 
-<? C::footer(); ?>
+<? C::footer($loc['nav']['titles'], $loc['nav']['links'], 0, $loc['footer']['pay'], $loc['footer']['corp']); ?>

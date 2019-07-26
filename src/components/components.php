@@ -98,7 +98,7 @@ class C
     </section>
   <? }
 
-  public static function card($title, $desc, $rubles, $cents, array $pluses, $test_period, $currency, $margin = true)
+  public static function card($title, $desc, $rubles, $cents, array $pluses, $test_period, $currency, $btn, $margin = true)
   { ?>
     <div class="text-text card-tariff flex flex-col p-3 border-2 border-primary rounded-lg <? echo $margin ? " mr-5" : "" ?>" style="height: 470px">
       <h2 class="font-bold text-primary text-2xl text-center tracking-wider mb-3">
@@ -147,7 +147,7 @@ class C
       </div>
 
       <button class="bg-primary text-sm text-white py-3 px-8 w-full rounded uppercase tracking-widest hover:bg-primary-lighten mb-2">
-        Заказать
+        <? echo $btn ?>
       </button>
       <p class="text-text-lighten text-center text-sm">
         <? echo $test_period ?>
@@ -191,7 +191,7 @@ class C
     </div>
   <? }
 
-  public static function footer()
+  public static function footer($titles, $links, $current, $pay, $corp)
   { ?>
     <section class="bg-text">
       <div class="container mx-auto pl-3 lg:pl-0">
@@ -201,24 +201,12 @@ class C
           </div>
 
           <div class="text-white text-lg lg:flex lg:items-center mb-3 lg:mb-0">
-            <a class="block text-primary mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
-              Главная
-            </a>
-            <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
-              Домен
-            </a>
-            <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
-              Хостинг
-            </a>
-            <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
-              VPS/VDS
-            </a>
-            <a class="block mr-4 lg:inline-block cursor-pointer hover:text-primary mb-1 lg:mb-0">
-              Облако
-            </a>
-            <a class="block lg:inline-block cursor-pointer hover:text-primary">
-              Сотрудничество
-            </a>
+            <?
+            for ($i = 0; $i < sizeof($titles); $i++) { ?>
+              <a href="<? echo $links[$i] ?>" class="block mr-4 lg:inline-block mb-1 lg:mb-0 <? echo $i == $current ? 'text-primary' : 'text-white' ?>  hover:text-primary cursor-pointer">
+                <? echo $titles[$i] ?>
+              </a>
+            <? } ?>
           </div>
           <div class="inline-flex mb-3 lg:mb-0">
             <a class="mr-3" href="https://vk.com/peakscloud" target="_blank" rel="noopener">
@@ -234,7 +222,7 @@ class C
         </div>
         <div class="block lg:inline-flex mb-3 lg:mb-0">
           <div class="inline-flex items-center lg:mr-3">
-            <p class="text-white-halfopacity text-base text-lg mr-2 leading-none mb-2 lg:mb-0">Мы принимаем </p>
+            <p class="text-white-halfopacity text-base text-lg mr-2 leading-none mb-2 lg:mb-0"><? echo $pay ?> </p>
           </div>
           <div class="flex items-center">
             <div class="inline-flex flex-wrap">
@@ -257,7 +245,7 @@ class C
           </div>
         </div>
         <div class="py-2">
-          <p class="text-white-halfopacity">© 2019 peakscloud.ru - хостинг, развитием которого управляют его пользователи</p>
+          <p class="text-white-halfopacity"><? echo $corp ?></p>
         </div>
       </div>
     </section>
