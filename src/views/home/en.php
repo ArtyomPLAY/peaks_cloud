@@ -2,8 +2,8 @@
 
 $loc = array(
   'nav' => array(
-    'titles' => ['Home', 'Domen', 'Hosting', 'VPS/VDS', 'Cloud', 'Partnership'],
-    'links' => ['/', '', '', '', '', '']
+    'titles' => ['Home', 'Partnership'],
+    'links' => ['/', '/partnership.php']
   ),
   'footer' => array(
     'pay' => 'We accept',

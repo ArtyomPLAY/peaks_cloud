@@ -1,11 +1,9 @@
 <?
-if ($_SESSION['lang'] == "ru") {
-  //$data = file_get_contents(__DIR__ . "/ru.json");
-  //$loc = json_decode($data, true);
+if ($_SESSION['lang'] == "ru")
   include __DIR__ . '/ru.php';
-} elseif ($_SESSION['lang'] == 'en') {
+elseif ($_SESSION['lang'] == 'en')
   include __DIR__ . '/en.php';
-}
+
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/components.php';
 
 C::navbar($loc['nav']['titles'], $loc['nav']['links'], 0);

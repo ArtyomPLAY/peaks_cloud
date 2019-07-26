@@ -7,7 +7,7 @@ class C
   }
   public static function sectionHeader($text, $color = 'text-text')
   {
-    echo '<h1 class="text-4xl md:text-6xl ' . $color . ' font-bold leading-none mb-3">'
+    echo '<h1 class="text-4xl md:text-6xl ' . $color . ' font-bold leading-none mb-4">'
       . $text
       . '</h1>';
   }
@@ -34,7 +34,10 @@ class C
       <div class="container mx-auto">
         <nav class="flex items-center justify-between text-text flex-wrap py-2 px-3 md:py-4 md:px-0">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <span class="font-medium text-2xl text-text tracking-tight hover:text-primary cursor-pointer">PeaksCloud</span>
+            <a href="/">
+              <span class="font-medium text-2xl text-text tracking-tight hover:text-primary cursor-pointer">PeaksCloud</span>
+            </a>
+
           </div>
           <div class="block lg:hidden">
             <button class="flex focus:outline-none items-center px-3 py-2 text-text" onclick="toggleMenu()">
